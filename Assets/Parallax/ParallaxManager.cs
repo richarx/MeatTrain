@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Locomotor;
 using UnityEngine;
 
 namespace Parallax
@@ -9,7 +10,6 @@ namespace Parallax
         [SerializeField] private float defaultSpeed;
         [SerializeField] private List<Parallax> parallaxes;
 
-        private float previousSpeed;
         
         public static ParallaxManager instance;
 
@@ -20,21 +20,17 @@ namespace Parallax
 
         private void Start()
         {
+            GreatLocomotor.OnUpdateSpeed.AddListener(SetSpeed);
+            
             foreach (Parallax parallax in parallaxes)
             {
                 parallax.SetSpeed(defaultSpeed);
             }
-
-            previousSpeed = defaultSpeed;
         }
 
         private void Update()
         {
-            if (Math.Abs(defaultSpeed - previousSpeed) > 0.01f)
-            {
-                previousSpeed = defaultSpeed;
-                SetSpeed(defaultSpeed);
-            }
+            
         }
 
         public void StartMoving()

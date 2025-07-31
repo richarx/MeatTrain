@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
+using Locomotor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class PlayerInput : MonoBehaviour
+namespace Inputs
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerInput : MonoBehaviour
     {
-        
-    }
+        private void Update()
+        {
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+                OnPressInput();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void OnPressInput()
+        {
+            GreatLocomotor.instance.AddSpeed();
+        }
     }
 }
