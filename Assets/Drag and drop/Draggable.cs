@@ -88,6 +88,8 @@ public class Draggable : MonoBehaviour
 
     private void StopFalling()
     {
+        OnFallGround.Invoke();
+
         rb.velocity = Vector2.zero;
         isFalling = false;
     }
