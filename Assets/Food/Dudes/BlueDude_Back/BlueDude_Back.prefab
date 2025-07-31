@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2266468633531379037}
   - component: {fileID: 533569143649721427}
   - component: {fileID: 1872345170808780644}
+  - component: {fileID: 3996871596558490214}
   m_Layer: 7
   m_Name: BlueDude_Back
   m_TagString: Untagged
@@ -249,3 +250,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3996871596558490214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2318159408652714967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b5b3052fd4cbb44a837919ea9c278e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

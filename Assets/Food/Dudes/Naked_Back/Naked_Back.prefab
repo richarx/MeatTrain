@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 380456649942482726}
   - component: {fileID: 88774692551632004}
   - component: {fileID: 8561369070729248444}
+  - component: {fileID: -6220879558442109089}
   m_Layer: 7
   m_Name: Naked_Back
   m_TagString: Untagged
@@ -249,3 +250,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-6220879558442109089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4630779648082404913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b5b3052fd4cbb44a837919ea9c278e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
