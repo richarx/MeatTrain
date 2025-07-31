@@ -19,11 +19,11 @@ namespace Locomotor
 
         public float SlowInterval => slowInterval;
 
-        public static UnityEvent<float> OnUpdateSpeed = new UnityEvent<float>();
+        [HideInInspector] public static UnityEvent<float> OnUpdateSpeed = new UnityEvent<float>();
 
-        public static UnityEvent OnHonk = new UnityEvent();
-        public static UnityEvent OnAccelerate = new UnityEvent();
-        public static UnityEvent OnDecelerate = new UnityEvent();
+        [HideInInspector] public static UnityEvent OnHonk = new UnityEvent();
+        [HideInInspector] public static UnityEvent OnAccelerate = new UnityEvent();
+        [HideInInspector] public static UnityEvent OnDecelerate = new UnityEvent();
 
         public static GreatLocomotor instance;
 

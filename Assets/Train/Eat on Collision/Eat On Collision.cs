@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class EatOnCollision : MonoBehaviour
 {
-    public static UnityEvent OnEat = new UnityEvent();
+    [HideInInspector] public static UnityEvent OnEat = new UnityEvent();
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -2133,6 +2133,7 @@ MonoBehaviour:
   targetSpeedDeceleration: 0.3
   targetSpeedDecreaseOnHold: 0.25
   slowInterval: 0.2
+  isBreaking: 0
 --- !u!4 &1211333616
 Transform:
   m_ObjectHideFlags: 0

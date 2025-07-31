@@ -15,10 +15,10 @@ public class Draggable : MonoBehaviour
     [SerializeField] private LayerMask shadowInteractMask;
     [HideInInspector] public GameObject shadow;
 
-    public UnityEvent OnDrag = new UnityEvent();
-    public UnityEvent OnDrop = new UnityEvent();
-    public UnityEvent OnFallGround = new UnityEvent();
-    public UnityEvent OnIsEaten = new UnityEvent();
+    [HideInInspector] public UnityEvent OnDrag = new UnityEvent();
+    [HideInInspector] public UnityEvent OnDrop = new UnityEvent();
+    [HideInInspector] public UnityEvent OnFallGround = new UnityEvent();
+    [HideInInspector] public UnityEvent OnIsEaten = new UnityEvent();
 
     public bool IsBeingDragged => isBeingDragged;
     private bool isBeingDragged;
