@@ -1,5 +1,6 @@
 using System;
 using Parallax;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,8 +14,16 @@ namespace Locomotor
         [SerializeField] private float deceleration;
         [SerializeField] private float targetSpeedIncreaseOnInput;
         [SerializeField] private float targetSpeedDeceleration;
-        
+        [SerializeField] private float targetSpeedDecreaseOnHold;
+        [SerializeField] private float slowInterval;
+
+        public float SlowInterval => slowInterval;
+
         public static UnityEvent<float> OnUpdateSpeed = new UnityEvent<float>();
+
+        public static UnityEvent OnHonk = new UnityEvent();
+        public static UnityEvent OnAccelerate = new UnityEvent();
+        public static UnityEvent OnDecelerate = new UnityEvent();
 
         public static GreatLocomotor instance;
 
@@ -25,6 +34,9 @@ namespace Locomotor
         public float TargetSpeed => targetSpeed;
         public float DistanceCrawled => distanceCrawled;
 
+        public bool isBreaking;
+        private bool hasBreaked;
+
         private void Awake()
         {
             instance = this;
@@ -32,6 +44,12 @@ namespace Locomotor
 
         private void Update()
         {
+            if (isBreaking == true && hasBreaked == false)
+            {
+                StartCoroutine(DecreaseSpeed());
+                hasBreaked = true;
+            }
+
             currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, (currentSpeed < targetSpeed ? acceleration : deceleration) * Time.deltaTime);
             targetSpeed = Mathf.MoveTowards(targetSpeed, 0.0f, targetSpeedDeceleration * Time.deltaTime);
             OnUpdateSpeed?.Invoke(currentSpeed);
@@ -41,8 +59,29 @@ namespace Locomotor
 
         public void AddSpeed()
         {
+            OnAccelerate.Invoke();
             targetSpeed += targetSpeedIncreaseOnInput;
             targetSpeed = Mathf.Min(targetSpeed, maxSpeed);
+        }
+
+        public IEnumerator DecreaseSpeed()
+        {
+            OnDecelerate.Invoke();
+
+            while (isBreaking)
+            {
+                targetSpeed -= targetSpeedDecreaseOnHold;
+                targetSpeed = Mathf.Max(targetSpeed, 0);
+                yield return new WaitForSeconds(slowInterval);
+            }
+
+            hasBreaked = false;
+        }
+
+        public void Honk()
+        {
+            OnHonk.Invoke();
+            Debug.Log("Honk honk");
         }
     }
 }

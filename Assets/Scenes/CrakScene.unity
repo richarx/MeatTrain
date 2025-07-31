@@ -2131,6 +2131,8 @@ MonoBehaviour:
   deceleration: 3
   targetSpeedIncreaseOnInput: 0.25
   targetSpeedDeceleration: 0.3
+  targetSpeedDecreaseOnHold: 0.25
+  slowInterval: 0.2
 --- !u!4 &1211333616
 Transform:
   m_ObjectHideFlags: 0
