@@ -10,7 +10,14 @@ public class Draggable : MonoBehaviour
 {
     [SerializeField] private float dropSpeed;
     [SerializeField] private GameObject shadowPrefab;
+    [SerializeField] private LayerMask shadowInteractMask;
     [HideInInspector] public GameObject shadow;
+
+    public bool IsBeingDragged => isBeingDragged;
+    private bool isBeingDragged;
+
+    public bool IsFalling => isFalling;
+    private bool isFalling;
 
     private SqueezeAndStretch squeeze;
     private Blink blink;
@@ -28,7 +35,13 @@ public class Draggable : MonoBehaviour
     private void Update()
     {
         if (shadow != null)
+            ShadowScale();
+
+        if (!isFalling && shadow != null)
             ShadowFollow();
+
+        if (isFalling == true && transform.position.y < shadow.transform.position.y + 0.5f)
+            StopFalling();
     }
 
     private void OnMouseDown()
@@ -44,6 +57,8 @@ public class Draggable : MonoBehaviour
     private void Drag()
     {
         DragAndDrop.Instance.Register(this.gameObject);
+        isBeingDragged = true;
+
         squeeze.Trigger();
         blink.Trigger();
 
@@ -54,32 +69,38 @@ public class Draggable : MonoBehaviour
     private void Drop()
     {
         DragAndDrop.Instance.UnRegister();
+        isBeingDragged = false;
+        isFalling = true;
+
         rb.velocity = Vector2.down * dropSpeed * Time.fixedDeltaTime;
+    }
+
+    private void StopFalling()
+    {
+        rb.velocity = Vector2.zero;
+        isFalling = false;
     }
 
     private void ShadowFollow()
     {
-        int groundLayer = 6;
-        int groundMask = 1 << groundLayer;
-        int stomachLayer = 8;
-        int stomachMask = 1 << stomachLayer;
-        int combinedMask = groundMask | stomachMask;
+        //4.3 f min ground height size - 0.2 max ground height size
+        shadow.transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y - 0.5f, -4.3f, 0.5f), 0);
+        
+        if (rb.velocity == Vector2.zero && !DragAndDrop.Instance.isDragging)
+            Destroy(shadow);
+    }
 
-        ray = Physics2D.Raycast(transform.position, Vector2.down, 1000f, combinedMask);
+    private void ShadowScale()
+    {
+        ray = Physics2D.Raycast(transform.position, Vector2.down, 1000f, shadowInteractMask);
+        float shadowScale = Mathf.Clamp((10 - ray.distance) / 10, 0.25f, 1f);
 
         if (shadow != null)
         {
             if (ray.distance > 10f)
                 shadow.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
-            else if (ray.distance <= 10f && ray.distance > 5f)
-                shadow.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-            else
-                shadow.transform.localScale = new Vector3(1f, 1f, 1f);
+            else if (ray.distance <= 10f && ray.distance > 0f)
+                shadow.transform.localScale = new Vector3(shadowScale, shadowScale, shadowScale);
         }
-
-        shadow.transform.position = new Vector3(transform.position.x, ray.point.y, 0);
-
-        if (rb.velocity == Vector2.zero && !DragAndDrop.Instance.isDragging)
-            Destroy(shadow);
     }
 }

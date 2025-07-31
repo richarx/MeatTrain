@@ -11,7 +11,7 @@ public class EatOnCollision : MonoBehaviour
 
     private void Eat(GameObject food)
     {
-        Destroy(food);
         Destroy(food.GetComponent<Draggable>().shadow);
+        Destroy(food);
     }
 }
