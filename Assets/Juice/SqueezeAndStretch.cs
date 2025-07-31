@@ -39,7 +39,7 @@ public class SqueezeAndStretch : MonoBehaviour
 
         while (timer < duration)
         {
-            t = Tools.NormalizeValue(timer, 0, duration);
+            t = Tools.Tools.NormalizeValue(timer, 0, duration);
             targetTransform.localScale = Vector3.Lerp(newSize, OGSize, t);
             yield return null;
             timer += Time.deltaTime;

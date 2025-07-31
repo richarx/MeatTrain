@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bc3a74f6cb31c1d44a84d930af77d530
+guid: 94bcef201fb63bd498a13515cd14bff5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 0
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -110,28 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Clouds_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 232
-        width: 1046
-        height: 116
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca08869cd3b570442a09a833e626e275
-      internalID: 1368056333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Clouds_1
+      name: Mountains_0
       rect:
         serializedVersion: 2
         x: 0
@@ -145,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1be4ba38a6e405841b16107f8268b53b
-      internalID: 1523138170
+      spriteID: 27e3b7c09bcc70b4e9abe840e24e56dd
+      internalID: -307283557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Clouds_2
+      name: Mountains_1
       rect:
         serializedVersion: 2
         x: 0
@@ -166,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c25184f3ea32e14ca5bacc8b2438c00
-      internalID: 426500623
+      spriteID: 57eee4d5e1248f34cbeb9c5d940f21e4
+      internalID: 179730906
       vertices: []
       indices: 
       edges: []
@@ -183,9 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Clouds_0: 1368056333
-      Clouds_1: 1523138170
-      Clouds_2: 426500623
+      Mountains_0: -307283557
+      Mountains_1: 179730906
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

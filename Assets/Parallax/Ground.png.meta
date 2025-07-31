@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bc3a74f6cb31c1d44a84d930af77d530
+guid: fa3d1efd379705b48bc3ff5d744c352d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 0
-  spriteMeshType: 0
-  alignment: 0
+  spriteMeshType: 1
+  alignment: 4
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,70 +108,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Clouds_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 232
-        width: 1046
-        height: 116
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca08869cd3b570442a09a833e626e275
-      internalID: 1368056333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Clouds_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 116
-        width: 1046
-        height: 116
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1be4ba38a6e405841b16107f8268b53b
-      internalID: 1523138170
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Clouds_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1046
-        height: 116
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c25184f3ea32e14ca5bacc8b2438c00
-      internalID: 426500623
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -182,10 +119,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Clouds_0: 1368056333
-      Clouds_1: 1523138170
-      Clouds_2: 426500623
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
