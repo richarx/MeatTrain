@@ -1026,7 +1026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c093326bc3c3a6f4487988f773237414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSourcePrefab: {fileID: 0}
+  audioSourcePrefab: {fileID: 4261137926694444932, guid: 6c1b85a51f8505742a87a49e0c240a64, type: 3}
 --- !u!114 &490076639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1039,6 +1039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22288b45444acb3438956e938501a446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ambientSound: {fileID: 8300000, guid: 8e6fbeb1179293a46b7c78256af1d39b, type: 3}
 --- !u!1 &514995638
 GameObject:
   m_ObjectHideFlags: 0
