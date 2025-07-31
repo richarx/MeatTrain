@@ -5,6 +5,8 @@ using System.Xml.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+
 
 public class Draggable : MonoBehaviour
 {
@@ -12,6 +14,11 @@ public class Draggable : MonoBehaviour
     [SerializeField] private GameObject shadowPrefab;
     [SerializeField] private LayerMask shadowInteractMask;
     [HideInInspector] public GameObject shadow;
+
+    public UnityEvent OnDrag = new UnityEvent();
+    public UnityEvent OnDrop = new UnityEvent();
+    public UnityEvent OnFallGround = new UnityEvent();
+    public UnityEvent OnIsEaten = new UnityEvent();
 
     public bool IsBeingDragged => isBeingDragged;
     private bool isBeingDragged;
@@ -56,6 +63,8 @@ public class Draggable : MonoBehaviour
 
     private void Drag()
     {
+        OnDrag.Invoke();
+
         DragAndDrop.Instance.Register(this.gameObject);
         isBeingDragged = true;
 
@@ -68,6 +77,8 @@ public class Draggable : MonoBehaviour
 
     private void Drop()
     {
+        OnDrop.Invoke();
+
         DragAndDrop.Instance.UnRegister();
         isBeingDragged = false;
         isFalling = true;
@@ -83,7 +94,7 @@ public class Draggable : MonoBehaviour
 
     private void ShadowFollow()
     {
-        //4.3 f min ground height size - 0.2 max ground height size
+        //4.3 f min ground height size - 0.5 max ground height size
         shadow.transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y - 0.5f, -4.3f, 0.5f), 0);
         
         if (rb.velocity == Vector2.zero && !DragAndDrop.Instance.isDragging)
