@@ -226,7 +226,6 @@ GameObject:
   m_Component:
   - component: {fileID: 131733596}
   - component: {fileID: 131733597}
-  - component: {fileID: 131733598}
   m_Layer: 0
   m_Name: Parallax
   m_TagString: Untagged
@@ -272,21 +271,6 @@ MonoBehaviour:
   - {fileID: 1916366947}
   - {fileID: 37014200}
   - {fileID: 353909898}
---- !u!114 &131733598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131733595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cc758aedd93bfb4b8c06b6d044145c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forest: {fileID: 21300000, guid: 54de5ec2dd9ab3142b2ec57a069ecc08, type: 3}
-  desert: {fileID: 21300000, guid: 72ca1f4a68b8e6a4da11c965be3e9bca, type: 3}
-  city: {fileID: 21300000, guid: a981164c6e0da544dad546c6fe846d6f, type: 3}
 --- !u!1 &139962783
 GameObject:
   m_ObjectHideFlags: 0
