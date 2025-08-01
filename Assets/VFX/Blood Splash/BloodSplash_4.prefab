@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 3023975031329866749}
   - component: {fileID: 5527070026239105180}
   - component: {fileID: 3017064303920051090}
-  - component: {fileID: 4554610507327041890}
-  - component: {fileID: -6246603158218892125}
+  - component: {fileID: -7010770294947619845}
   m_Layer: 0
   m_Name: BloodSplash_4
   m_TagString: Untagged
@@ -55,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 1a050079660658a4ba4b9efdc7961ced, type: 3}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,7 +107,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4554610507327041890
+--- !u!114 &-7010770294947619845
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,19 +116,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7492719039021353942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad7c09d67e83a05489c15cb11762a4b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 6251c1ce3ef48a541a3fb7c2f7faa593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0.3
---- !u!114 &-6246603158218892125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7492719039021353942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac3c2c18e587ed64cad2aaed87cf85a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  duration: 0.5
