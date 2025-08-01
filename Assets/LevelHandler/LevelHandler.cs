@@ -6,23 +6,21 @@ using UnityEngine.Events;
 
 public class LevelHandler : MonoBehaviour
 {
-    private LevelHandler Instance;
+    public static LevelHandler Instance;
 
-    public static UnityEvent OnLevelChange = new UnityEvent();
+    public static UnityEvent<float> OnLevelChange = new UnityEvent<float>();
+
+    private float currentLevel;
+    [HideInInspector] public float CurrentLevel => currentLevel;
 
     void Start()
     {
         Instance = this;  
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeLevel()
     {
-        
-    }
-
-    private void ChangeLevel()
-    {
-        OnLevelChange.Invoke();
+        currentLevel += 1f;
+        OnLevelChange.Invoke(currentLevel);
     }
 }

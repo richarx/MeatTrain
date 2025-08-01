@@ -22,7 +22,10 @@ public class Scrollable : MonoBehaviour
 
     private void Scroll()
     {
-        currentSpeed = GreatLocomotor.instance.CurrentSpeed * 7f;
-        transform.position = transform.position + (Vector3.left * currentSpeed * Time.deltaTime);
+        if (GreatLocomotor.instance != null)
+        {
+            currentSpeed = GreatLocomotor.instance.CurrentSpeed * 7f;
+            transform.position = transform.position + (Vector3.left * currentSpeed * Time.deltaTime);
+        }
     }
 }

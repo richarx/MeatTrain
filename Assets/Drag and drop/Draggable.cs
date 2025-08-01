@@ -10,6 +10,9 @@ using UnityEngine.Events;
 
 public class Draggable : MonoBehaviour
 {
+    [SerializeField] private float meatValue;
+    [HideInInspector] public float MeatValue => meatValue;
+
     [SerializeField] private float dropSpeed;
     [SerializeField] private GameObject shadowPrefab;
     [SerializeField] private LayerMask shadowInteractMask;
@@ -84,6 +87,12 @@ public class Draggable : MonoBehaviour
         isFalling = true;
 
         rb.velocity = Vector2.down * dropSpeed * Time.fixedDeltaTime;
+    }
+    public void GetEaten()
+    {
+        OnIsEaten.Invoke();
+        Destroy(shadow);
+        Destroy(this.gameObject);
     }
 
     private void StopFalling()

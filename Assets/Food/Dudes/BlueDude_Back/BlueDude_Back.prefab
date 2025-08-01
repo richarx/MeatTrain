@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e1343998213814fbb4328e805ed99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meatValue: 25
   dropSpeed: 150
   shadowPrefab: {fileID: 3708990553091076178, guid: 02bdebc0f2ff70442bf2d3269a7f083e, type: 3}
   shadowInteractMask:
