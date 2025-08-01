@@ -71,8 +71,11 @@ public class Draggable : MonoBehaviour
         DragAndDrop.Instance.Register(this.gameObject);
         isBeingDragged = true;
 
-        squeeze.Trigger();
-        blink.Trigger();
+        if (squeeze != null)
+            squeeze.Trigger();
+
+        if (blink != null)
+            blink.Trigger();
 
         if (shadow == null)
             shadow = Instantiate(shadowPrefab, transform.position - new Vector3(0, 0.25f, 0), Quaternion.identity);
