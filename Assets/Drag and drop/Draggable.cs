@@ -68,6 +68,8 @@ public class Draggable : MonoBehaviour
     {
         OnDrag.Invoke();
 
+        isFalling = false;
+
         DragAndDrop.Instance.Register(this.gameObject);
         isBeingDragged = true;
 

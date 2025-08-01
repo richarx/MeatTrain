@@ -8,7 +8,6 @@ public class DragAndDrop : MonoBehaviour
     public static DragAndDrop Instance;
 
     private GameObject objectDragged;
-    private GameObject shadow;
     private Vector2 cursorPosition;
 
     public bool isDragging => objectDragged != null;

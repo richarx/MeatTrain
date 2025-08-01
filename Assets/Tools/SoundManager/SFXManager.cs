@@ -14,6 +14,16 @@ public class SFXManager : MonoBehaviour
             Instance = this;
     }
 
+    public AudioSource PlayRandomSFX(List<AudioClip> clips, float volume = 0.1f, float delay = 0.0f, bool loop = false, float pitch = 1f)
+    {
+        if (clips == null)
+            return null;
+
+        int index = Random.Range(0, clips.Count);
+
+        return PlaySFXAtLocation(clips[index], null, volume, delay, loop, pitch);
+    }
+
     public AudioSource PlayRandomSFXAtLocation(AudioClip[] clips, Transform target, float volume = 0.1f, float delay = 0.0f, bool loop = false, float pitch = 1f)
     {
         int index = Random.Range(0, clips.Length);

@@ -12,26 +12,39 @@ public class MeatWagon : MonoBehaviour
     [SerializeField] private SpriteRenderer meatSpriteRenderer;
     [SerializeField] public List<Sprite> meatStockSprites;
 
+    [SerializeField] private List<AudioClip> eating;
+
     private float MeatCount;
     private float MeatMax;
 
+    private SqueezeAndStretch squeeze;
+    private SqueezeAndStretch storageSqueeze;
+
     private void Start()
     {
+        squeeze = GetComponent<SqueezeAndStretch>();
+        storageSqueeze = meatSpriteRenderer.GetComponent<SqueezeAndStretch>();
+
         LevelHandler.LevelHandler.OnLevelChange.AddListener(UpdateFoodLevel);
         OnEat.AddListener((_) => UpdateVisualLevel());
         
         UpdateFoodLevel(1);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         Eat(collision.gameObject);
     }
 
     private void Eat(GameObject food)
     {
+        if (!food.GetComponent<Draggable>().IsFalling)
+            return;
+
         EatSound();
         AddFood(food);
+        squeeze.Trigger();
+        storageSqueeze.Trigger();
         food.GetComponent<Draggable>().GetEaten();
     }
 
@@ -76,6 +89,6 @@ public class MeatWagon : MonoBehaviour
 
     private void EatSound()
     {
-
+        SFXManager.Instance.PlayRandomSFX(eating);
     }
 }

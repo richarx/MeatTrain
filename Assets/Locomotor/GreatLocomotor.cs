@@ -9,7 +9,8 @@ namespace Locomotor
     public class GreatLocomotor : MonoBehaviour
     {
         [Header("Move Speed")]
-        [SerializeField] private float maxSpeed;
+        [SerializeField] private float startingSpeed;
+        [SerializeField] private float speedGainPerLevel;
         [SerializeField] private float acceleration;
         [SerializeField] private float deceleration;
         [SerializeField] private float targetSpeedIncreaseOnInput;
@@ -29,6 +30,7 @@ namespace Locomotor
 
         private float targetSpeed;
         private float currentSpeed;
+        private float maxSpeed;
         private float distanceCrawled;
         public float CurrentSpeed => currentSpeed;
         public float TargetSpeed => targetSpeed;
@@ -40,6 +42,12 @@ namespace Locomotor
         private void Awake()
         {
             instance = this;
+        }
+
+        private void Start()
+        {
+            LevelHandler.LevelHandler.OnLevelChange.AddListener(UpdateMaxSpeed);
+            UpdateMaxSpeed(1);
         }
 
         private void Update()
@@ -82,6 +90,11 @@ namespace Locomotor
         {
             OnHonk.Invoke();
             Debug.Log("Honk honk");
+        }
+
+        private void UpdateMaxSpeed(int level)
+        {
+            maxSpeed = startingSpeed + speedGainPerLevel * level;
         }
     }
 }
