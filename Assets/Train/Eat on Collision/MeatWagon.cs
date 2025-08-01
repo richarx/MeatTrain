@@ -68,7 +68,7 @@ namespace Train.Eat_on_Collision
 
             OnEat.Invoke(MeatCount);
 
-            if (MeatCount > MeatMax)
+            if (MeatCount >= MeatMax)
             {
                 MeatCount = MeatMax;
                 OnMeatWagonFull.Invoke();

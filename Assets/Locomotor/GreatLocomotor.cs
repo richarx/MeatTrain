@@ -1,6 +1,7 @@
 using System;
 using Parallax;
 using System.Collections;
+using Train.Eat_on_Collision;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -18,13 +19,10 @@ namespace Locomotor
         [SerializeField] private float targetSpeedDecreaseOnHold;
         [SerializeField] private float slowInterval;
 
-        public float SlowInterval => slowInterval;
+        public static UnityEvent<float> OnUpdateSpeed = new UnityEvent<float>();
 
-        [HideInInspector] public static UnityEvent<float> OnUpdateSpeed = new UnityEvent<float>();
-
-        [HideInInspector] public static UnityEvent OnHonk = new UnityEvent();
-        [HideInInspector] public static UnityEvent OnAccelerate = new UnityEvent();
-        [HideInInspector] public static UnityEvent OnDecelerate = new UnityEvent();
+        public static UnityEvent OnHonk = new UnityEvent();
+        public static UnityEvent OnAccelerate = new UnityEvent();
 
         public static GreatLocomotor instance;
 
@@ -35,9 +33,6 @@ namespace Locomotor
         public float CurrentSpeed => currentSpeed;
         public float TargetSpeed => targetSpeed;
         public float DistanceCrawled => distanceCrawled;
-
-        public bool isBreaking;
-        private bool hasBreaked;
 
         private void Awake()
         {
@@ -52,12 +47,9 @@ namespace Locomotor
 
         private void Update()
         {
-            if (isBreaking == true && hasBreaked == false)
-            {
-                StartCoroutine(DecreaseSpeed());
-                hasBreaked = true;
-            }
-
+            if (MeatWagon.instance.isFull)
+                DecreaseSpeed();
+            
             currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, (currentSpeed < targetSpeed ? acceleration : deceleration) * Time.deltaTime);
             targetSpeed = Mathf.MoveTowards(targetSpeed, 0.0f, targetSpeedDeceleration * Time.deltaTime);
             OnUpdateSpeed?.Invoke(currentSpeed);
@@ -67,23 +59,18 @@ namespace Locomotor
 
         public void AddSpeed()
         {
+            if (MeatWagon.instance.isFull)
+                return;
+            
             OnAccelerate.Invoke();
             targetSpeed += targetSpeedIncreaseOnInput;
             targetSpeed = Mathf.Min(targetSpeed, maxSpeed);
         }
 
-        public IEnumerator DecreaseSpeed()
+        public void DecreaseSpeed()
         {
-            OnDecelerate.Invoke();
-
-            while (isBreaking)
-            {
-                targetSpeed -= targetSpeedDecreaseOnHold;
-                targetSpeed = Mathf.Max(targetSpeed, 0);
-                yield return new WaitForSeconds(slowInterval);
-            }
-
-            hasBreaked = false;
+            targetSpeed -= targetSpeedDecreaseOnHold * Time.deltaTime;
+            targetSpeed = Mathf.Max(targetSpeed, 0);
         }
 
         public void Honk()

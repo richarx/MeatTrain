@@ -12,12 +12,9 @@ namespace Inputs
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
                 OnPressInput();
 
-            if (Keyboard.current.rKey.wasPressedThisFrame)
+            if (Keyboard.current.rKey.isPressed)
                 OnSlowInput();
-
-            if (Keyboard.current.rKey.wasReleasedThisFrame)
-                OnSlowRelease();
-
+            
             if (Keyboard.current.fKey.wasPressedThisFrame)
                 OnHonkInput();
         }
@@ -29,12 +26,7 @@ namespace Inputs
 
         private void OnSlowInput()
         {
-            GreatLocomotor.instance.isBreaking = true;
-        }
-
-        private void OnSlowRelease()
-        {
-            GreatLocomotor.instance.isBreaking = false;
+            GreatLocomotor.instance.DecreaseSpeed();
         }
 
         private void OnHonkInput()
