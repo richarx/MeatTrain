@@ -30,7 +30,7 @@ namespace LevelHandler
         {
             if (MeatWagon.instance.isFull && Keyboard.current.lKey.wasPressedThisFrame)
             {
-                ToolTipManager.instance.DisplayToolTip("You have reached a new Stage", 1.0f);
+                ToolTipManager.instance.DisplayToolTip(ComputeLevelUpText(), 1.0f);
                 ChangeLevel();
             }
         }
@@ -39,6 +39,24 @@ namespace LevelHandler
         {
             currentLevel += 1;
             OnLevelChange.Invoke(currentLevel);
+        }
+
+        private string ComputeLevelUpText()
+        {
+            string[] array = new[]
+            {
+                "More...",
+                "Need More...",
+                "More meat...",
+                "Where meat ?..",
+                "So Hungry...",
+                "Not enough...",
+            };
+
+            if (currentLevel > array.Length)
+                return array[^1];
+            
+            return array[currentLevel - 1];
         }
     }
 }
