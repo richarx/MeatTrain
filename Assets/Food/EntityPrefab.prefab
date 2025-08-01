@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5820319504051577489}
   - component: {fileID: 1396724000190767662}
   m_Layer: 7
-  m_Name: DudePrefab
+  m_Name: EntityPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
