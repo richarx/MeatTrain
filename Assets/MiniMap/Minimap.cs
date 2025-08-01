@@ -17,6 +17,7 @@ namespace MiniMap
         [SerializeField] private float sizeScaling;
         
         private List<Transform> nodes = new List<Transform>();
+        private Transform tailNode;
 
         private int length = 3;
 
@@ -33,10 +34,12 @@ namespace MiniMap
         private void SetupInitialNodes()
         {
             angleBetweenNodes = startingAngleBetweenNodes;
-            for (int i = 0; i < parentHolder.childCount; i++)
+            for (int i = 0; i < parentHolder.childCount - 1; i++)
             {
                 nodes.Add(parentHolder.GetChild(i));
             }
+
+            tailNode = parentHolder.GetChild(parentHolder.childCount - 1);
         }
 
         private void IncreaseTrainSize(int level)
@@ -79,7 +82,15 @@ namespace MiniMap
                 nodes[i].localScale = Vector3.one * (0.07f + sizeScaling * currentLevel);
                 angle += angleBetweenNodes;
             }
+            
+            Vector2 tailDirection = Vector2.right.AddAngleToDirection(angle).normalized;
+            Vector3 tailPosition = center + tailDirection * distanceFromPlanetCenter;
+            tailNode.position = tailPosition;
+            tailNode.localRotation = tailDirection.AddAngleToDirection(-90.0f).ToRotation();
+            tailNode.localScale = Vector3.one * (0.07f + sizeScaling * currentLevel);
         }
+        
+        
 
         private void UpdateTrainLength()
         {

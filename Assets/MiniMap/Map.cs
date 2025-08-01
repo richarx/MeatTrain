@@ -1,5 +1,6 @@
 using Locomotor;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace MiniMap
 {
@@ -11,6 +12,8 @@ namespace MiniMap
             Desert,
             City
         }
+
+        public static UnityEvent OnReachNewBiome = new UnityEvent();
 
         [SerializeField] private float worldSize;
 
@@ -48,8 +51,9 @@ namespace MiniMap
             currentBiomeIndex += 1;
             if (currentBiomeIndex > 2)
                 currentBiomeIndex = 0;
-                
+
             Debug.Log($"Reached new Biome : {currentBiome}");
+            OnReachNewBiome?.Invoke();
         }
 
         private float ComputeNextBiomeDistance()
