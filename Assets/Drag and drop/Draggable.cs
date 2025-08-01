@@ -70,6 +70,9 @@ public class Draggable : MonoBehaviour
 
     private void Drag()
     {
+        if (digestable.isBeingDigested)
+            return;
+
         OnDrag.Invoke();
 
         isFalling = false;

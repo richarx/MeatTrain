@@ -32,8 +32,11 @@ public class Digestable : MonoBehaviour
             DestroyAfterDigestion();        
     }
 
-    private void OnTriggerStay2D()
+    private void OnTriggerStay2D(Collider2D collider)
     {
+        if (!collider.CompareTag("StomachTrain"))
+            return;
+
         if (!isBeingDigested)
             StartDigestion();
     }
@@ -47,7 +50,7 @@ public class Digestable : MonoBehaviour
         MeatWagon.instance.FoodEntered();
         draggable.DestroyShadow();
 
-        rb.velocity = Vector2.down * (draggable.DropSpeed / 3)* Time.fixedDeltaTime;
+        rb.velocity = Vector2.down * (draggable.DropSpeed / 8)* Time.fixedDeltaTime;
     }
 
     private void DestroyAfterDigestion()

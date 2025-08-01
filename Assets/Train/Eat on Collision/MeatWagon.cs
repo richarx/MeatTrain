@@ -88,7 +88,7 @@ namespace Train.Eat_on_Collision
 
         private void UpdateVisualLevel()
         {
-            float currentMeatPercentage = Tools.Tools.NormalizeValueInRange(MeatCount, 0, MeatMax, 0, 8);
+            float currentMeatPercentage = Mathf.Clamp(Tools.Tools.NormalizeValueInRange(MeatCount, 0, MeatMax, 0, 8), 0, 8);
             meatSpriteRenderer.sprite = meatStockSprites[(int)currentMeatPercentage];
         }
 
