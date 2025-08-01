@@ -6,22 +6,21 @@ using UnityEngine.Events;
 
 public class MeatWagon : MonoBehaviour
 {
-    [HideInInspector] public static UnityEvent OnMeatWagonFull = new UnityEvent();
-    [HideInInspector] public static UnityEvent<float> OnEat = new UnityEvent<float>();
+    public static UnityEvent OnMeatWagonFull = new UnityEvent();
+    public static UnityEvent<float> OnEat = new UnityEvent<float>();
 
     [SerializeField] private SpriteRenderer meatSpriteRenderer;
     [SerializeField] public List<Sprite> meatStockSprites;
 
     private float MeatCount;
     private float MeatMax;
-    public float initialMeatMax;
 
     private void Start()
     {
-        MeatMax = initialMeatMax;
-
-        LevelHandler.OnLevelChange.AddListener((_) => UpdateFoodLevel(LevelHandler.Instance.CurrentLevel));
-        OnEat.AddListener((_) => UpdateVisualLevel(MeatCount));
+        LevelHandler.LevelHandler.OnLevelChange.AddListener(UpdateFoodLevel);
+        OnEat.AddListener((_) => UpdateVisualLevel());
+        
+        UpdateFoodLevel(1);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,7 +37,7 @@ public class MeatWagon : MonoBehaviour
 
     private void AddFood(GameObject food)
     {
-        if (MeatCount == MeatMax)
+        if (MeatCount >= MeatMax)
             return;
 
         MeatCount += food.GetComponent<Draggable>().MeatValue;
@@ -47,13 +46,13 @@ public class MeatWagon : MonoBehaviour
         OnEat.Invoke(MeatCount);
 
         if (MeatCount > MeatMax)
+        {
             MeatCount = MeatMax;
-
-        if (MeatCount == MeatMax)
             OnMeatWagonFull.Invoke();
+        }
     }
 
-    private void UpdateFoodLevel(float level)
+    private void UpdateFoodLevel(int level)
     {
         MeatCount = 0;
 
@@ -69,10 +68,9 @@ public class MeatWagon : MonoBehaviour
             MeatMax = 1000;
     }
 
-    private void UpdateVisualLevel(float currentMeatLevel)
+    private void UpdateVisualLevel()
     {
         float currentMeatPercentage = Tools.Tools.NormalizeValueInRange(MeatCount, 0, MeatMax, 0, 8);
-
         meatSpriteRenderer.sprite = meatStockSprites[(int)currentMeatPercentage];
     }
 

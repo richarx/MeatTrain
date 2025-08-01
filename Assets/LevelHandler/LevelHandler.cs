@@ -1,26 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
-
-public class LevelHandler : MonoBehaviour
+namespace LevelHandler
 {
-    public static LevelHandler Instance;
-
-    public static UnityEvent<float> OnLevelChange = new UnityEvent<float>();
-
-    private float currentLevel;
-    [HideInInspector] public float CurrentLevel => currentLevel;
-
-    void Start()
+    public class LevelHandler : MonoBehaviour
     {
-        Instance = this;  
-    }
+        public static LevelHandler Instance;
 
-    public void ChangeLevel()
-    {
-        currentLevel += 1f;
-        OnLevelChange.Invoke(currentLevel);
+        public static UnityEvent<int> OnLevelChange = new UnityEvent<int>();
+
+        private int currentLevel = 1;
+        public int CurrentLevel => currentLevel;
+
+        private void Start()
+        {
+            Instance = this;  
+        }
+
+        private void Update()
+        {
+            if (Keyboard.current.lKey.wasPressedThisFrame)
+                ChangeLevel();
+        }
+
+        public void ChangeLevel()
+        {
+            currentLevel += 1;
+            OnLevelChange.Invoke(currentLevel);
+        }
     }
 }
