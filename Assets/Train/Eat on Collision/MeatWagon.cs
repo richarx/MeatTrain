@@ -36,16 +36,16 @@ public class MeatWagon : MonoBehaviour
         Eat(collision.gameObject);
     }
 
-    private void Eat(GameObject food)
+    public void Eat(GameObject food)
     {
         if (!food.GetComponent<Draggable>().IsFalling)
             return;
 
         EatSound();
         AddFood(food);
-        squeeze.Trigger();
-        storageSqueeze.Trigger();
-        food.GetComponent<Draggable>().GetEaten();
+        squeeze.Trigger(); //digestable
+        storageSqueeze.Trigger(); 
+        food.GetComponent<Draggable>().GetEaten(); //Digestable
     }
 
     private void AddFood(GameObject food)
