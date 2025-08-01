@@ -1,94 +1,105 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-
-public class MeatWagon : MonoBehaviour
+namespace Train.Eat_on_Collision
 {
-    public static UnityEvent OnMeatWagonFull = new UnityEvent();
-    public static UnityEvent<float> OnEat = new UnityEvent<float>();
-
-    [SerializeField] private SpriteRenderer meatSpriteRenderer;
-    [SerializeField] public List<Sprite> meatStockSprites;
-
-    [SerializeField] private List<AudioClip> eating;
-
-    private float MeatCount;
-    private float MeatMax;
-
-    private SqueezeAndStretch squeeze;
-    private SqueezeAndStretch storageSqueeze;
-
-    private void Start()
+    public class MeatWagon : MonoBehaviour
     {
-        squeeze = GetComponent<SqueezeAndStretch>();
-        storageSqueeze = meatSpriteRenderer.GetComponent<SqueezeAndStretch>();
+        public static UnityEvent OnMeatWagonFull = new UnityEvent();
+        public static UnityEvent<float> OnEat = new UnityEvent<float>();
 
-        LevelHandler.LevelHandler.OnLevelChange.AddListener(UpdateFoodLevel);
-        OnEat.AddListener((_) => UpdateVisualLevel());
+        [SerializeField] private SpriteRenderer meatSpriteRenderer;
+        [SerializeField] public List<Sprite> meatStockSprites;
+
+        [SerializeField] private List<AudioClip> eating;
+
+        public static MeatWagon instance;
         
-        UpdateFoodLevel(1);
-    }
+        private float MeatCount;
+        private float MeatMax;
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        Eat(collision.gameObject);
-    }
+        public bool isFull => MeatCount >= MeatMax;
 
-    public void Eat(GameObject food)
-    {
-        if (!food.GetComponent<Draggable>().IsFalling)
-            return;
+        private SqueezeAndStretch squeeze;
+        private SqueezeAndStretch storageSqueeze;
 
-        EatSound();
-        AddFood(food);
-        squeeze.Trigger(); //digestable
-        storageSqueeze.Trigger(); 
-        food.GetComponent<Draggable>().GetEaten(); //Digestable
-    }
-
-    private void AddFood(GameObject food)
-    {
-        if (MeatCount >= MeatMax)
-            return;
-
-        MeatCount += food.GetComponent<Draggable>().MeatValue;
-        Debug.Log(MeatCount);
-
-        OnEat.Invoke(MeatCount);
-
-        if (MeatCount > MeatMax)
+        private void Awake()
         {
-            MeatCount = MeatMax;
-            OnMeatWagonFull.Invoke();
+            instance = this;
         }
-    }
 
-    private void UpdateFoodLevel(int level)
-    {
-        MeatCount = 0;
+        private void Start()
+        {
+            squeeze = GetComponent<SqueezeAndStretch>();
+            storageSqueeze = meatSpriteRenderer.GetComponent<SqueezeAndStretch>();
 
-        if (level == 1)
-            MeatMax = 100;
-        if (level == 2)
-            MeatMax = 250;
-        if (level == 3)
-            MeatMax = 450;
-        if (level == 4)
-            MeatMax = 700;
-        if (level == 5)
-            MeatMax = 1000;
-    }
+            LevelHandler.LevelHandler.OnLevelChange.AddListener(UpdateFoodLevel);
+            OnEat.AddListener((_) => UpdateVisualLevel());
+        
+            UpdateFoodLevel(1);
+        }
 
-    private void UpdateVisualLevel()
-    {
-        float currentMeatPercentage = Tools.Tools.NormalizeValueInRange(MeatCount, 0, MeatMax, 0, 8);
-        meatSpriteRenderer.sprite = meatStockSprites[(int)currentMeatPercentage];
-    }
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            Eat(collision.gameObject);
+        }
 
-    private void EatSound()
-    {
-        SFXManager.Instance.PlayRandomSFX(eating);
+        public void Eat(GameObject food)
+        {
+            if (!food.GetComponent<Draggable>().IsFalling)
+                return;
+
+            EatSound();
+            AddFood(food);
+            squeeze.Trigger(); //digestable
+            storageSqueeze.Trigger(); 
+            food.GetComponent<Draggable>().GetEaten(); //Digestable
+        }
+
+        private void AddFood(GameObject food)
+        {
+            if (MeatCount >= MeatMax)
+                return;
+
+            MeatCount += food.GetComponent<Draggable>().MeatValue;
+            Debug.Log(MeatCount);
+
+            OnEat.Invoke(MeatCount);
+
+            if (MeatCount > MeatMax)
+            {
+                MeatCount = MeatMax;
+                OnMeatWagonFull.Invoke();
+            }
+        }
+
+        private void UpdateFoodLevel(int level)
+        {
+            MeatCount = 0;
+
+            if (level == 1)
+                MeatMax = 100;
+            if (level == 2)
+                MeatMax = 250;
+            if (level == 3)
+                MeatMax = 450;
+            if (level == 4)
+                MeatMax = 700;
+            if (level == 5)
+                MeatMax = 1000;
+        }
+
+        private void UpdateVisualLevel()
+        {
+            float currentMeatPercentage = Tools.Tools.NormalizeValueInRange(MeatCount, 0, MeatMax, 0, 8);
+            meatSpriteRenderer.sprite = meatStockSprites[(int)currentMeatPercentage];
+        }
+
+        private void EatSound()
+        {
+            SFXManager.Instance.PlayRandomSFX(eating);
+        }
     }
 }

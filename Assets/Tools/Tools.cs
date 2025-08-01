@@ -150,19 +150,19 @@ namespace Tools
             sprite.color = color;
         }
 
-        public static IEnumerator Fade(TextMeshProUGUI text, float duration, bool fadeIn, bool scaledTime = true)
+        public static IEnumerator Fade(TextMeshProUGUI text, float duration, bool fadeIn, float maxFade = 1.0f, bool scaledTime = true)
         {
             if (duration == 0.0f)
             {
                 Color tmp = text.color;
-                tmp.a = fadeIn ? 1.0f : 0.0f;
+                tmp.a = fadeIn ? maxFade : 0.0f;
                 text.color = tmp;
                 yield break;
             }
 
-            float fade = fadeIn ? 0.0f : 1.0f;
+            float fade = fadeIn ? 0.0f : maxFade;
             float timer = duration;
-            float increment = 1.0f / timer;
+            float increment = maxFade / timer;
             Color color = text.color;
 
             while (timer > 0.0f)
@@ -177,7 +177,7 @@ namespace Tools
                 yield return null;
             }
 
-            color.a = fadeIn ? 1.0f : 0.0f;
+            color.a = fadeIn ? maxFade : 0.0f;
             text.color = color;
         }
 
