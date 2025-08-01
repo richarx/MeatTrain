@@ -10,10 +10,9 @@ using UnityEngine.Events;
 
 public class Draggable : MonoBehaviour
 {
-    [SerializeField] private float meatValue;
-    [HideInInspector] public float MeatValue => meatValue;
-
     [SerializeField] private float dropSpeed;
+    public float DropSpeed => dropSpeed;
+
     [SerializeField] private GameObject shadowPrefab;
     [SerializeField] private LayerMask shadowInteractMask;
     [HideInInspector] public GameObject shadow;
@@ -21,7 +20,7 @@ public class Draggable : MonoBehaviour
     [HideInInspector] public UnityEvent OnDrag = new UnityEvent();
     [HideInInspector] public UnityEvent OnDrop = new UnityEvent();
     [HideInInspector] public UnityEvent OnFallGround = new UnityEvent();
-    [HideInInspector] public UnityEvent OnIsEaten = new UnityEvent();
+
 
     public bool IsBeingDragged => isBeingDragged;
     private bool isBeingDragged;
@@ -32,6 +31,7 @@ public class Draggable : MonoBehaviour
     private SqueezeAndStretch squeeze;
     private Blink blink;
     private Rigidbody2D rb;
+    private Digestable digestable;
 
     private RaycastHit2D ray;
 
@@ -40,10 +40,14 @@ public class Draggable : MonoBehaviour
         squeeze = GetComponent<SqueezeAndStretch>();
         blink = GetComponent<Blink>();
         rb = GetComponent<Rigidbody2D>();
+        digestable = GetComponent<Digestable>();
     }
 
     private void Update()
     {
+        if (digestable.isBeingDigested)
+            return;
+
         if (shadow != null)
             ShadowScale();
 
@@ -93,11 +97,9 @@ public class Draggable : MonoBehaviour
 
         rb.velocity = Vector2.down * dropSpeed * Time.fixedDeltaTime;
     }
-    public void GetEaten()
+    public void DestroyShadow()
     {
-        OnIsEaten.Invoke();
         Destroy(shadow);
-        Destroy(this.gameObject);
     }
 
     private void StopFalling()

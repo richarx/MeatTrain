@@ -8,15 +8,18 @@ public class Scrollable : MonoBehaviour
     private float currentSpeed;
 
     private Draggable draggable;
+    private Digestable digestable;
+
 
     void Start()
     {
         draggable = GetComponent<Draggable>();
+        digestable = GetComponent<Digestable>();
     }
 
     void Update()
     {
-        if (!draggable.IsBeingDragged && !draggable.IsFalling)
+        if (!draggable.IsBeingDragged && !draggable.IsFalling && !digestable.isBeingDigested)
             Scroll();
     }
 

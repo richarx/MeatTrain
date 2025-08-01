@@ -41,29 +41,24 @@ namespace Train.Eat_on_Collision
             UpdateFoodLevel(1);
         }
 
-        private void OnTriggerStay2D(Collider2D collision)
+        public void FoodEntered()
         {
-            Eat(collision.gameObject);
-        }
-
-        public void Eat(GameObject food)
-        {
-            if (!food.GetComponent<Draggable>().IsFalling)
-                return;
-
             EatSound();
-            AddFood(food);
-            squeeze.Trigger(); //digestable
-            storageSqueeze.Trigger(); 
-            food.GetComponent<Draggable>().GetEaten(); //Digestable
+            squeeze.Trigger();
         }
 
-        private void AddFood(GameObject food)
+        public void Eat(Digestable food)
+        {
+            AddFood(food);
+            storageSqueeze.Trigger(); 
+        }
+
+        private void AddFood(Digestable food)
         {
             if (MeatCount >= MeatMax)
                 return;
 
-            MeatCount += food.GetComponent<Draggable>().MeatValue;
+            MeatCount += food.MeatValue;
             Debug.Log(MeatCount);
 
             OnEat.Invoke(MeatCount);
@@ -97,7 +92,7 @@ namespace Train.Eat_on_Collision
             meatSpriteRenderer.sprite = meatStockSprites[(int)currentMeatPercentage];
         }
 
-        private void EatSound()
+        public void EatSound()
         {
             SFXManager.Instance.PlayRandomSFX(eating);
         }
