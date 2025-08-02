@@ -104,8 +104,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 340406666523660354}
   - {fileID: 3448556813091243457}
+  - {fileID: 340406666523660354}
   - {fileID: 7710767941901556214}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -144,7 +144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50c2090f522b25043b14d94bdf0c8815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnIsEaten:
+  OnIsDigested:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartDigestion:
     m_PersistentCalls:
       m_Calls: []
   meatValue: 15

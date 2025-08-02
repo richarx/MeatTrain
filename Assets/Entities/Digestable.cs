@@ -69,7 +69,7 @@ namespace Entities
                 SpriteRenderer spriteRendererTemp = transform.GetChild(i).GetComponent<SpriteRenderer>();
 
                 if (spriteRendererTemp != null)
-                    spriteRendererTemp.sortingOrder = -200 + sortingOrderOffset;
+                    spriteRendererTemp.sortingOrder = -200 + sortingOrderOffset + i;
             }
         }
 
