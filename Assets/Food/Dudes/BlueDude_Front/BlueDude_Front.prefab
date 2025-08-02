@@ -120,13 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e1343998213814fbb4328e805ed99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meatValue: 0
-  dropSpeed: 150
-  shadowPrefab: {fileID: 3708990553091076178, guid: 02bdebc0f2ff70442bf2d3269a7f083e, type: 3}
-  shadowInteractMask:
-    serializedVersion: 2
-    m_Bits: 832
-  shadow: {fileID: 0}
+  dropSpeed: 6
+  dropHeight: 1.5
   OnDrag:
     m_PersistentCalls:
       m_Calls: []
@@ -134,9 +129,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnFallGround:
-    m_PersistentCalls:
-      m_Calls: []
-  OnIsEaten:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &7473638703126277068
@@ -331,3 +323,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b5b3052fd4cbb44a837919ea9c278e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}

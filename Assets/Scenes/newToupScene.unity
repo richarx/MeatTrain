@@ -122,63 +122,31 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &43801238
-PrefabInstance:
+--- !u!1 &91454447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7262766835987436721, guid: 827a4dd6cf225c44e9905c463c085d54, type: 3}
+  m_PrefabInstance: {fileID: 572695519}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &91454448 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8611116174487498613, guid: 827a4dd6cf225c44e9905c463c085d54, type: 3}
+  m_PrefabInstance: {fileID: 572695519}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &91454451
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.89
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318159408652714967, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_Name
-      value: BlueDude_Back (13)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91454447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01fd0b5e874568b4c85487d16e575d04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  honk: {fileID: 8300000, guid: 249aaf20f5eec294eb87994ecd265284, type: 3}
+  bloodGeyserParticle: {fileID: 755650489450224303}
+  animationDuration: 2.7
 --- !u!1 &123327478
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +236,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &143102975
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1454368094839182814, guid: ea4c50cbcf207a34ba29740e7d54fb6f, type: 3}
+      propertyPath: m_Name
+      value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463565485943316923, guid: ea4c50cbcf207a34ba29740e7d54fb6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.4813375
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463565485943316923, guid: ea4c50cbcf207a34ba29740e7d54fb6f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3204658
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463565485943316923, guid: ea4c50cbcf207a34ba29740e7d54fb6f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463565485943316923, guid: ea4c50cbcf207a34ba29740e7d54fb6f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463565485943316923, guid: ea4c50cbcf207a34ba29740e7d54fb6f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463565485943316923, guid: ea4c50cbcf207a34ba29740e7d54fb6f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463565485943316923, guid: ea4c50cbcf207a34ba29740e7d54fb6f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463565485943316923, guid: ea4c50cbcf207a34ba29740e7d54fb6f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463565485943316923, guid: ea4c50cbcf207a34ba29740e7d54fb6f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463565485943316923, guid: ea4c50cbcf207a34ba29740e7d54fb6f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea4c50cbcf207a34ba29740e7d54fb6f, type: 3}
 --- !u!1001 &209686789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -365,234 +390,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abddff7697efd5849b267f1bc9b963dc, type: 3}
---- !u!1001 &222759980
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.5812173
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318159408652714967, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_Name
-      value: BlueDude_Back (5)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
---- !u!1001 &399524192
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.5812173
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318159408652714967, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_Name
-      value: BlueDude_Back (4)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
---- !u!1001 &423651749
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318159408652714967, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_Name
-      value: BlueDude_Back (8)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
---- !u!1001 &453941177
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318159408652714967, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_Name
-      value: BlueDude_Back (10)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
 --- !u!1 &490076636
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,63 +587,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &525061360
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.5812173
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318159408652714967, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_Name
-      value: BlueDude_Back (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
 --- !u!1001 &572695519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -901,180 +641,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8611116174487498613, guid: 827a4dd6cf225c44e9905c463c085d54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 755650489450224302}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7262766835987436721, guid: 827a4dd6cf225c44e9905c463c085d54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 91454451}
   m_SourcePrefab: {fileID: 100100000, guid: 827a4dd6cf225c44e9905c463c085d54, type: 3}
---- !u!1001 &675473539
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318159408652714967, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_Name
-      value: BlueDude_Back (7)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
---- !u!1001 &678012393
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.5812173
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318159408652714967, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_Name
-      value: BlueDude_Back (3)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
---- !u!1001 &710444377
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.5812173
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318159408652714967, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_Name
-      value: BlueDude_Back (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
 --- !u!1 &896312619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,177 +877,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1001 &1171268279
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.5812173
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318159408652714967, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_Name
-      value: BlueDude_Back
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
---- !u!1001 &1201541485
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.5812173
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318159408652714967, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_Name
-      value: BlueDude_Back (6)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
---- !u!1001 &1207884207
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318159408652714967, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_Name
-      value: BlueDude_Back (11)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
 --- !u!1 &1211333614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,63 +1397,6 @@ Transform:
   - {fileID: 1832936139}
   m_Father: {fileID: 514995640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1759595697
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318159408652714967, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_Name
-      value: BlueDude_Back (12)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
 --- !u!1 &1832936138
 GameObject:
   m_ObjectHideFlags: 0
@@ -2218,63 +1565,77 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &2074490532
+--- !u!1001 &755650489450224301
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 91454448}
     m_Modifications:
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
+    - target: {fileID: 2445361746123505933, guid: 296525c2893607b43bf9712b8f9577ef, type: 3}
+      propertyPath: m_Name
+      value: Blood_Geyser
+      objectReference: {fileID: 0}
+    - target: {fileID: 2445361746123505933, guid: 296525c2893607b43bf9712b8f9577ef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609332259710682277, guid: 296525c2893607b43bf9712b8f9577ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.87
+      value: 0.077251434
       objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
+    - target: {fileID: 4609332259710682277, guid: 296525c2893607b43bf9712b8f9577ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.33
+      value: 0.14296335
       objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
+    - target: {fileID: 4609332259710682277, guid: 296525c2893607b43bf9712b8f9577ef, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
+    - target: {fileID: 4609332259710682277, guid: 296525c2893607b43bf9712b8f9577ef, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
+    - target: {fileID: 4609332259710682277, guid: 296525c2893607b43bf9712b8f9577ef, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
+    - target: {fileID: 4609332259710682277, guid: 296525c2893607b43bf9712b8f9577ef, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
+    - target: {fileID: 4609332259710682277, guid: 296525c2893607b43bf9712b8f9577ef, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
+    - target: {fileID: 4609332259710682277, guid: 296525c2893607b43bf9712b8f9577ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
+    - target: {fileID: 4609332259710682277, guid: 296525c2893607b43bf9712b8f9577ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1583573792693452086, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
+    - target: {fileID: 4609332259710682277, guid: 296525c2893607b43bf9712b8f9577ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318159408652714967, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
-      propertyPath: m_Name
-      value: BlueDude_Back (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 296525c2893607b43bf9712b8f9577ef, type: 3}
+--- !u!4 &755650489450224302 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4609332259710682277, guid: 296525c2893607b43bf9712b8f9577ef, type: 3}
+  m_PrefabInstance: {fileID: 755650489450224301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &755650489450224303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2445361746123505933, guid: 296525c2893607b43bf9712b8f9577ef, type: 3}
+  m_PrefabInstance: {fileID: 755650489450224301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4801557032554955591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2350,18 +1711,5 @@ SceneRoots:
   - {fileID: 139962785}
   - {fileID: 123327480}
   - {fileID: 572695519}
-  - {fileID: 1171268279}
-  - {fileID: 710444377}
-  - {fileID: 525061360}
-  - {fileID: 678012393}
-  - {fileID: 399524192}
-  - {fileID: 222759980}
-  - {fileID: 1201541485}
-  - {fileID: 675473539}
-  - {fileID: 423651749}
-  - {fileID: 2074490532}
-  - {fileID: 453941177}
-  - {fileID: 1207884207}
-  - {fileID: 1759595697}
-  - {fileID: 43801238}
   - {fileID: 1558219779}
+  - {fileID: 143102975}

@@ -14,9 +14,6 @@ namespace Inputs
 
             if (Keyboard.current.rKey.isPressed)
                 OnSlowInput();
-            
-            if (Keyboard.current.fKey.wasPressedThisFrame)
-                OnHonkInput();
         }
 
         private void OnPressInput()
@@ -27,11 +24,6 @@ namespace Inputs
         private void OnSlowInput()
         {
             GreatLocomotor.instance.DecreaseSpeed();
-        }
-
-        private void OnHonkInput()
-        {
-            GreatLocomotor.instance.Honk();
         }
     }
 }
