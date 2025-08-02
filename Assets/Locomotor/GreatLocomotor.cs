@@ -1,6 +1,7 @@
 using System;
 using Parallax;
 using System.Collections;
+using MiniMap;
 using Train.Eat_on_Collision;
 using UnityEngine;
 using UnityEngine.Events;
@@ -41,6 +42,7 @@ namespace Locomotor
 
         private void Start()
         {
+            distanceCrawled = Map.instance.WorldSize / 6.0f;
             LevelHandler.LevelHandler.OnLevelChange.AddListener(UpdateMaxSpeed);
             UpdateMaxSpeed(1);
         }

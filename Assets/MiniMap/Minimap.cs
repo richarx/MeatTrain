@@ -90,7 +90,7 @@ namespace MiniMap
             float angle = currentAngle;
             for (int i = 0; i < nodes.Count; i++)
             {
-                Vector2 direction = Vector2.right.AddAngleToDirection(angle).normalized;
+                Vector2 direction = Vector2.up.AddAngleToDirection(angle).normalized;
                 Vector3 position = center + direction * distanceFromPlanetCenter;
                 nodes[i].position = position;
                 nodes[i].localRotation = direction.AddAngleToDirection(-90.0f).ToRotation();
@@ -98,7 +98,7 @@ namespace MiniMap
                 angle += angleBetweenNodes;
             }
             
-            Vector2 tailDirection = Vector2.right.AddAngleToDirection(angle).normalized;
+            Vector2 tailDirection = Vector2.up.AddAngleToDirection(angle).normalized;
             Vector3 tailPosition = center + tailDirection * distanceFromPlanetCenter;
             tailNode.position = tailPosition;
             tailNode.localRotation = tailDirection.AddAngleToDirection(-90.0f).ToRotation();
