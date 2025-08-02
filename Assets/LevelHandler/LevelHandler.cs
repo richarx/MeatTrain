@@ -15,6 +15,9 @@ namespace LevelHandler
 
         private int currentLevel = 1;
         public int CurrentLevel => currentLevel;
+        
+        private float levelUpAnimationDuration = 1.5f;
+        public float LevelUpAnimationDuration => levelUpAnimationDuration;
 
         [SerializeField] private Transform cameraTransform;
         [SerializeField] private List<AudioClip> levelUpSounds;

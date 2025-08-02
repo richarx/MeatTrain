@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Locomotor;
+using MiniMap;
 using UnityEngine;
 
 namespace Parallax
@@ -12,10 +13,20 @@ namespace Parallax
         private void Start()
         {
             GreatLocomotor.OnUpdateSpeed.AddListener(SetSpeed);
+            Map.OnReachNewBiome.AddListener(() => UpdateBiomeParallaxes(false));
             
+            SetSpeed(defaultSpeed);
+            UpdateBiomeParallaxes(true);
+        }
+        
+        private void UpdateBiomeParallaxes(bool isInstant)
+        {
+            Map.Biome biome = Map.instance.currentBiome;
+
             foreach (Parallax parallax in parallaxes)
             {
-                parallax.SetSpeed(defaultSpeed);
+                if (parallax.currentBiome != Map.Biome.None)
+                    parallax.SetState(biome == parallax.currentBiome, isInstant);
             }
         }
 

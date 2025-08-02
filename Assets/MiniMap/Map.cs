@@ -10,7 +10,8 @@ namespace MiniMap
         {
             Forest,
             Desert,
-            City
+            City,
+            None
         }
 
         public static UnityEvent OnReachNewBiome = new UnityEvent();
