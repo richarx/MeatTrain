@@ -58,6 +58,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropSpeed: 6
   dropHeight: 1.5
+  hitbox: {fileID: 5791244312963585380}
   OnDrag:
     m_PersistentCalls:
       m_Calls: []
