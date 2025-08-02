@@ -54,7 +54,7 @@ namespace Locomotor
             targetSpeed = Mathf.MoveTowards(targetSpeed, 0.0f, targetSpeedDeceleration * Time.deltaTime);
             OnUpdateSpeed?.Invoke(currentSpeed);
 
-            distanceCrawled += currentSpeed * Time.deltaTime;
+            distanceCrawled += currentSpeed * Time.deltaTime * 7.0f;
         }
 
         public void AddSpeed()

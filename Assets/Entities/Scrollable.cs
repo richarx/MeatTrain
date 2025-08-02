@@ -1,6 +1,5 @@
 using Locomotor;
-using System.Collections;
-using System.Collections.Generic;
+using Entities;
 using UnityEngine;
 
 public class Scrollable : MonoBehaviour
@@ -28,7 +27,7 @@ public class Scrollable : MonoBehaviour
         if (GreatLocomotor.instance != null)
         {
             currentSpeed = GreatLocomotor.instance.CurrentSpeed * 7f;
-            transform.position = transform.position + (Vector3.left * currentSpeed * Time.deltaTime);
+            transform.position += (Vector3.left * (currentSpeed * Time.deltaTime));
         }
     }
 }

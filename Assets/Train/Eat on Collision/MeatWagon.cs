@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Entities;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -84,6 +85,8 @@ namespace Train.Eat_on_Collision
                 MeatMax = 700;
             if (level == 5)
                 MeatMax = 1000;
+            
+            UpdateVisualLevel();
         }
 
         private void UpdateVisualLevel()

@@ -278,6 +278,7 @@ MonoBehaviour:
       m_Calls: []
   meatValue: 25
   digestionTime: 6
+  digestionFallCoefficient: 0.2
 --- !u!1 &4004399001243297947
 GameObject:
   m_ObjectHideFlags: 0

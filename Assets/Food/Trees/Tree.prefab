@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1964977824316355471}
   - component: {fileID: 8476686259382137140}
   - component: {fileID: 6996678312023183229}
+  - component: {fileID: 2437946294511777067}
   m_Layer: 7
   m_Name: Tree
   m_TagString: Untagged
@@ -52,7 +53,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e1343998213814fbb4328e805ed99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meatValue: 10
   dropSpeed: 150
   shadowPrefab: {fileID: 3708990553091076178, guid: 02bdebc0f2ff70442bf2d3269a7f083e, type: 3}
   shadowInteractMask:
@@ -66,9 +66,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnFallGround:
-    m_PersistentCalls:
-      m_Calls: []
-  OnIsEaten:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &5311404563480290171
@@ -240,6 +237,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6143627, y: 3.5425189}
   m_EdgeRadius: 0
+--- !u!114 &2437946294511777067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454368094839182814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c2090f522b25043b14d94bdf0c8815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnIsEaten:
+    m_PersistentCalls:
+      m_Calls: []
+  meatValue: 15
+  digestionTime: 10
+  digestionFallCoefficient: 1
 --- !u!1 &2125853849650795506
 GameObject:
   m_ObjectHideFlags: 0
