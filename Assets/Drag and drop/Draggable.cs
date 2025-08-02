@@ -9,6 +9,7 @@ namespace Drag_and_drop
     {
         [SerializeField] private float dropSpeed;
         [SerializeField] private float dropHeight;
+        [SerializeField] private Collider2D hitbox;
 
         [HideInInspector] public UnityEvent OnDrag = new UnityEvent();
         [HideInInspector] public UnityEvent OnDrop = new UnityEvent();
@@ -35,6 +36,8 @@ namespace Drag_and_drop
             blink = GetComponent<Blink>();
             rb = GetComponent<Rigidbody2D>();
             digestable = GetComponent<Digestable>();
+
+            hitbox.enabled = false;
         }
 
         private void Update()
@@ -75,6 +78,7 @@ namespace Drag_and_drop
             MultiGrabCursor.instance.AddFoodCount();
 
             rb.simulated = false;
+            hitbox.enabled = true;
 
             float followOffsetx = Random.Range(-0.5f, 0.5f);
             float followOffsety = Random.Range(-0.25f, 0.25f);
