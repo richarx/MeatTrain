@@ -1901,6 +1901,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Parallax
       objectReference: {fileID: 0}
+    - target: {fileID: 8608047753813470330, guid: bdc21fde8ae8e2f4d9d3f25ed716d35a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.654088
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608047753813470330, guid: bdc21fde8ae8e2f4d9d3f25ed716d35a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.55714047
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608047753813470330, guid: bdc21fde8ae8e2f4d9d3f25ed716d35a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4093192
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
