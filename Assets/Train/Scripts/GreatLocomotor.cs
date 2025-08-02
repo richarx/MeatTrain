@@ -22,7 +22,6 @@ namespace Locomotor
 
         public static UnityEvent<float> OnUpdateSpeed = new UnityEvent<float>();
 
-        public static UnityEvent OnHonk = new UnityEvent();
         public static UnityEvent OnAccelerate = new UnityEvent();
 
         public static GreatLocomotor instance;
@@ -73,12 +72,6 @@ namespace Locomotor
         {
             targetSpeed -= targetSpeedDecreaseOnHold * Time.deltaTime;
             targetSpeed = Mathf.Max(targetSpeed, 0);
-        }
-
-        public void Honk()
-        {
-            OnHonk.Invoke();
-            Debug.Log("Honk honk");
         }
 
         private void UpdateMaxSpeed(int level)
