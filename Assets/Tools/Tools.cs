@@ -180,6 +180,50 @@ namespace Tools
             color.a = fadeIn ? maxFade : 0.0f;
             text.color = color;
         }
+        
+        public static IEnumerator Shake(Transform target, float duration, float intensity, bool horizontal = false, bool vertical = false)
+        {
+            Vector2 previousShake = Vector2.zero;
+        
+            float timer = 0.0f;
+            while (timer <= duration)
+            {
+                Vector2 direction = Random.insideUnitCircle;
+
+                if (horizontal)
+                    direction.y = 0.0f;
+
+                if (vertical)
+                    direction.x = 0.0f;
+
+                target.position += ((direction * intensity) - previousShake).ToVector3();
+                previousShake = direction * intensity;
+            
+                yield return null;
+                timer += Time.deltaTime;
+            }
+
+            target.position -= previousShake.ToVector3();
+        }
+
+        public static IEnumerator TweenPosition(Transform target, float x, float y, float duration, bool deactivateOnEnd = false)
+        {
+            target.gameObject.SetActive(true);
+        
+            Vector3 targetPosition = new Vector3(x, y, target.position.z);
+            Vector3 velocity = Vector3.zero;
+        
+            while (Vector3.Distance(target.position, targetPosition) >= 0.15f)
+            {
+                target.position = Vector3.SmoothDamp(target.position, targetPosition, ref velocity, duration);
+                yield return null;
+            }
+
+            target.position = targetPosition;
+        
+            if (deactivateOnEnd)
+                target.gameObject.SetActive(false);
+        }
 
         public static string GetLastRecordedDirection(Vector2 lastRecordedMove)
         {

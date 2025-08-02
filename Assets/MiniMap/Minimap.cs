@@ -1,6 +1,5 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
-using Locomotor;
 using Tools;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,8 +8,10 @@ namespace MiniMap
 {
     public class Minimap : MonoBehaviour
     {
-        [SerializeField] private GameObject nodePrefab;
+        [SerializeField] private Transform display;
         [SerializeField] private Transform parentHolder;
+        [SerializeField] private GameObject nodePrefab;
+        [SerializeField] private int levelRequiredToUnlock;
         [SerializeField] private float distanceFromPlanetCenter;
         [SerializeField] private float startingAngleBetweenNodes;
         [SerializeField] private float angleBetweenNodesScaling;
@@ -24,11 +25,25 @@ namespace MiniMap
         private float currentAngle = 0.0f;
         private float angleBetweenNodes = 0.0f;
 
+        private bool isUnlocked;
+        
         private void Start()
         {
-            LevelHandler.LevelHandler.OnLevelChange.AddListener(IncreaseTrainSize);
+            LevelHandler.LevelHandler.OnLevelChange.AddListener((level) =>
+            {
+                if (!isUnlocked && level >= levelRequiredToUnlock)
+                    StartCoroutine(Unlock());
+                
+                IncreaseTrainSize(level);
+            });
 
             SetupInitialNodes();
+        }
+
+        private IEnumerator Unlock()
+        {
+            isUnlocked = true;
+            yield return Tools.Tools.TweenPosition(display, display.position.x, display.position.y - display.localPosition.y, 0.3f);
         }
 
         private void SetupInitialNodes()
@@ -69,7 +84,7 @@ namespace MiniMap
 
         private void UpdateNodesPosition()
         {
-            Vector2 center = transform.position;
+            Vector2 center = parentHolder.position;
             int currentLevel = LevelHandler.LevelHandler.Instance.CurrentLevel;
             
             float angle = currentAngle;
