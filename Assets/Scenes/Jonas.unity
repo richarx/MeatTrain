@@ -208,6 +208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f72a81261cca3342854d04699100dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 0}
+  levelUpSounds: []
 --- !u!4 &123327480
 Transform:
   m_ObjectHideFlags: 0
