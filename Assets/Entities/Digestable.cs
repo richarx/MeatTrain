@@ -29,6 +29,8 @@ namespace Entities
             rb = GetComponent<Rigidbody2D>();
             draggable = GetComponent<Draggable>();
             spriteRenderer = GetComponent<SpriteRenderer>();
+
+            meatValue += Random.Range(-2, 2);
         }
 
         private void Update()

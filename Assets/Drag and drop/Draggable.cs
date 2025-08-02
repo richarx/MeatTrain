@@ -19,6 +19,7 @@ namespace Drag_and_drop
 
         public bool IsBeingDragged => isBeingDragged;
         private bool isBeingDragged;
+        private Vector3 followOffset;
 
         public bool IsFalling => isFalling;
         private bool isFalling;
@@ -84,6 +85,11 @@ namespace Drag_and_drop
 
             rb.simulated = false;
 
+            float followOffsetx = Random.Range(-0.5f, 0.5f);
+            float followOffsety = Random.Range(-0.25f, 0.25f);
+
+            followOffset = new Vector2(followOffsetx, followOffsety);
+
             if (squeeze != null)
                 squeeze.Trigger();
 
@@ -96,8 +102,7 @@ namespace Drag_and_drop
 
         private void FollowCursor()
         {
-            transform.position = MultiGrabCursor.instance.transform.position;
-            //MoveTowards
+            transform.position = MultiGrabCursor.instance.transform.position + followOffset;
         }
 
         private void Drop()
