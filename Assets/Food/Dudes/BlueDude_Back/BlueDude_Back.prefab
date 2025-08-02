@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1424280422075482603}
   - component: {fileID: 3434068434588852983}
   - component: {fileID: 8971995268675241}
+  - component: {fileID: 834196755186290963}
   - component: {fileID: 533569143649721427}
   - component: {fileID: 3996871596558490214}
   - component: {fileID: 3505587672810616709}
@@ -114,6 +115,27 @@ MonoBehaviour:
   - {fileID: 9007263838461233187, guid: 6fb40e3f4a00ebe4f9b9e9c361682554, type: 3}
   - {fileID: 8081877286867634132, guid: 41c14983bc6ae3b42aec206999f7cb87, type: 3}
   greenMucusSpawnPositionOffset: {x: 0, y: 0}
+  topSplatterParticles:
+  - {fileID: 2267424410220414725, guid: 671608fcce5581d40989a2474b8f429e, type: 3}
+  - {fileID: 8652111075594172433, guid: 690a46a710cb2f14a8716d028a804c84, type: 3}
+  bottomSplatterParticles:
+  - {fileID: 8317907703647368443, guid: b64a5281bfe7f3e46a4eb8b9d4c9840c, type: 3}
+  - {fileID: 1831554333606372812, guid: d8a525fb219de0c46b4a927fb302781c, type: 3}
+--- !u!114 &834196755186290963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2318159408652714967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e26e54da989004ea6aa93266a81ec3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnSquash:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &533569143649721427
 MonoBehaviour:
   m_ObjectHideFlags: 0

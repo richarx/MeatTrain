@@ -6,6 +6,7 @@ TagManager:
   tags:
   - StomachTrain
   - Cursor
+  - SquashTrain
   layers:
   - Default
   - TransparentFX

@@ -19,6 +19,12 @@ public class Scrollable : MonoBehaviour
 
     void Update()
     {
+        if (draggable == null || digestable == null)
+        {
+            Scroll();
+            return;
+        }
+
         if (!draggable.IsBeingDragged && !draggable.IsFalling && !digestable.isBeingDigested)
             Scroll();
     }

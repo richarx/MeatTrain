@@ -78,7 +78,6 @@ namespace Entities
             OnIsDigested.Invoke();
             MeatWagon.instance.Eat(this);
 
-            // Animation etc
             Destroy(this.gameObject);
         }
     }
