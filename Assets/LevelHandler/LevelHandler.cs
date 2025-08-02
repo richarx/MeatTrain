@@ -16,6 +16,7 @@ namespace LevelHandler
         private int currentLevel = 1;
         public int CurrentLevel => currentLevel;
 
+        [SerializeField] private Transform cameraTransform;
         [SerializeField] private List<AudioClip> levelUpSounds;
 
         private void Start()
@@ -43,6 +44,7 @@ namespace LevelHandler
             currentLevel += 1;
             OnLevelChange.Invoke(currentLevel);
             PlayLevelUpSound();
+            ScreenShake();
         }
 
         private string ComputeLevelUpText()
@@ -66,6 +68,11 @@ namespace LevelHandler
         private void PlayLevelUpSound()
         {
             SFXManager.Instance.PlayRandomSFX(levelUpSounds);
+        }
+
+        private void ScreenShake()
+        {
+            StartCoroutine(Tools.Tools.Shake(cameraTransform, 0.2f, 0.3f, true));
         }
     }
 }
