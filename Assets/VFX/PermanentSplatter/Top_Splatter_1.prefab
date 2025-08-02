@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2356993303574965348}
   - component: {fileID: 6217347702665287144}
   - component: {fileID: -2507463973544212552}
-  - component: {fileID: -177053840155212948}
   m_Layer: 0
   m_Name: Top_Splatter_1
   m_TagString: Untagged
@@ -98,16 +97,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e72d399098c63a4c8c859217da491ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-177053840155212948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2267424410220414725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 550b15739fb9fe24fbdf85af6601d951, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 2267424410220414725}
