@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Train.Eat_on_Collision;
 using UI.ToolTip;
 using UnityEngine;
@@ -14,6 +15,8 @@ namespace LevelHandler
 
         private int currentLevel = 1;
         public int CurrentLevel => currentLevel;
+
+        [SerializeField] private List<AudioClip> levelUpSounds;
 
         private void Start()
         {
@@ -39,6 +42,7 @@ namespace LevelHandler
         {
             currentLevel += 1;
             OnLevelChange.Invoke(currentLevel);
+            PlayLevelUpSound();
         }
 
         private string ComputeLevelUpText()
@@ -57,6 +61,11 @@ namespace LevelHandler
                 return array[^1];
             
             return array[currentLevel - 1];
+        }
+
+        private void PlayLevelUpSound()
+        {
+            SFXManager.Instance.PlayRandomSFX(levelUpSounds);
         }
     }
 }
