@@ -1,6 +1,6 @@
-using System;
 using Tools;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Parallax
 {
@@ -10,6 +10,8 @@ namespace Parallax
         [SerializeField] private Transform parallax2;
         [SerializeField] private float speed;
         [SerializeField] private Vector2 direction;
+
+        public UnityEvent OnReachExit = new UnityEvent();
 
         private SpriteRenderer parallax1Sr;
         private SpriteRenderer parallax2Sr;
@@ -45,13 +47,13 @@ namespace Parallax
             parallax2.position += direction.ToVector3().normalized * (moveSpeed * Time.deltaTime);
 
             if (HasReachedExit(parallax1.position))
-                OnReachExit(parallax1, parallax1Sr);
+                ResetParallax(parallax1, parallax1Sr);
 
             if (HasReachedExit(parallax2.position))
-                OnReachExit(parallax2, parallax2Sr);
+                ResetParallax(parallax2, parallax2Sr);
         }
 
-        private void OnReachExit(Transform parallax, SpriteRenderer spriteRenderer)
+        private void ResetParallax(Transform parallax, SpriteRenderer spriteRenderer, bool triggerEvent = true)
         {
             parallax.position = secondPosition;
 
@@ -60,17 +62,26 @@ namespace Parallax
                 spriteRenderer.sprite = nextBiome;
                 biomeSpritesToUpdateCount -= 1;
             }
+            
+            if (triggerEvent)
+                OnReachExit?.Invoke();
         }
 
-        public void SetNewSprite(Sprite newSprite)
+        public void SetNewSprite(Sprite newSprite, bool isInstant = false)
         {
             nextBiome = newSprite;
             biomeSpritesToUpdateCount = 2;
+
+            if (isInstant)
+            {
+                bool first = parallax1.position.x > parallax2.position.x;
+                ResetParallax(first ? parallax1 : parallax2, first ? parallax1Sr : parallax2Sr, false);
+            }
         }
 
         private bool HasReachedExit(Vector3 position)
         {
-            return firstPosition.Distance(position) >= firstPosition.Distance(exitPosition);
+            return isMoving && globalSpeed > 0.0f && firstPosition.Distance(position) >= firstPosition.Distance(exitPosition);
         }
 
         public void StartMoving()

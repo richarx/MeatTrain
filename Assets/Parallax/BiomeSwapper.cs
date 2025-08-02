@@ -6,7 +6,7 @@ namespace Parallax
 {
     public class BiomeSwapper : MonoBehaviour
     {
-        [SerializeField] private Parallax groundParallax;
+        [SerializeField] private Parallax parallax;
         [SerializeField] private Sprite forest;
         [SerializeField] private Sprite desert;
         [SerializeField] private Sprite city;
@@ -19,10 +19,10 @@ namespace Parallax
         private void UpdateBiomeSprites()
         {
             Map.Biome biome = Map.instance.currentBiome;
-            groundParallax.SetNewSprite(SelectGroundSprite(biome));
+            parallax.SetNewSprite(SelectSprite(biome));
         }
 
-        private Sprite SelectGroundSprite(Map.Biome biome)
+        private Sprite SelectSprite(Map.Biome biome)
         {
             switch (biome)
             {

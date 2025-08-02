@@ -396,8 +396,8 @@ Transform:
   m_GameObject: {fileID: 2623072477525577163}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.2, y: -2.278285, z: 0}
-  m_LocalScale: {x: 1.5, y: 0.7049631, z: 1}
+  m_LocalPosition: {x: 9.09, y: -2.278285, z: 0}
+  m_LocalScale: {x: 1.21455, y: 0.7049631, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7810665478459669263}
@@ -789,6 +789,9 @@ MonoBehaviour:
   parallax2: {fileID: 1412244182487123725}
   speed: 2
   direction: {x: -1, y: 0}
+  OnReachExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5023263913207259860
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +818,7 @@ Transform:
   m_GameObject: {fileID: 5023263913207259860}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.766, z: 0}
+  m_LocalPosition: {x: -14, y: -0.766, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -837,8 +840,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parallax1: {fileID: 2214442097695985044}
   parallax2: {fileID: 851552856713783836}
-  speed: 5.25
+  speed: 5
   direction: {x: -1, y: 0}
+  OnReachExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5553294499677441260
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,6 +895,9 @@ MonoBehaviour:
   parallax2: {fileID: 4799517832187790703}
   speed: 1
   direction: {x: -1, y: 0}
+  OnReachExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5729387752041427954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,6 +1200,9 @@ MonoBehaviour:
   parallax2: {fileID: 6048750336142650473}
   speed: 7
   direction: {x: -1, y: 0}
+  OnReachExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7703599143205215697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,7 +1229,7 @@ Transform:
   m_GameObject: {fileID: 7703599143205215697}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.513, z: 0}
+  m_LocalPosition: {x: -14, y: -0.513, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1239,8 +1251,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parallax1: {fileID: 6001104670058027432}
   parallax2: {fileID: 1836613637763278376}
-  speed: 3.5
+  speed: 4
   direction: {x: -1, y: 0}
+  OnReachExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7839048529795137409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,9 +1350,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4859721345633221078}
   - component: {fileID: 2523687581224521116}
-  - component: {fileID: 2368477376534798116}
   - component: {fileID: 210948641425642055}
   - component: {fileID: 2459452076771467069}
+  - component: {fileID: 7946797026436877509}
   m_Layer: 0
   m_Name: Parallax
   m_TagString: Untagged
@@ -1384,22 +1399,6 @@ MonoBehaviour:
   - {fileID: 2640176801478630354}
   - {fileID: 3793236031562380738}
   - {fileID: 6455074267537417092}
---- !u!114 &2368477376534798116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8180334750197554705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cc758aedd93bfb4b8c06b6d044145c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundParallax: {fileID: 6455074267537417092}
-  forest: {fileID: 21300000, guid: 54de5ec2dd9ab3142b2ec57a069ecc08, type: 3}
-  desert: {fileID: 21300000, guid: 72ca1f4a68b8e6a4da11c965be3e9bca, type: 3}
-  city: {fileID: 21300000, guid: a981164c6e0da544dad546c6fe846d6f, type: 3}
 --- !u!114 &210948641425642055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1412,7 +1411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc758aedd93bfb4b8c06b6d044145c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundParallax: {fileID: 2640176801478630354}
+  parallax: {fileID: 2640176801478630354}
   forest: {fileID: 179730906, guid: 94bcef201fb63bd498a13515cd14bff5, type: 3}
   desert: {fileID: -501046947, guid: 6b8b291910de574439fe5b81854a9ad9, type: 3}
   city: {fileID: -467935006, guid: ef7dcd0f32dbf7b4fb82342386db0c6a, type: 3}
@@ -1428,10 +1427,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc758aedd93bfb4b8c06b6d044145c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundParallax: {fileID: 3793236031562380738}
+  parallax: {fileID: 3793236031562380738}
   forest: {fileID: -307283557, guid: 94bcef201fb63bd498a13515cd14bff5, type: 3}
   desert: {fileID: -77700722, guid: 6b8b291910de574439fe5b81854a9ad9, type: 3}
   city: {fileID: 2133018183, guid: ef7dcd0f32dbf7b4fb82342386db0c6a, type: 3}
+--- !u!114 &7946797026436877509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8180334750197554705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42fd858f1dc47b942a3d98dd27808aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetParallax: {fileID: 2640176801478630354}
+  groundParallax: {fileID: 6455074267537417092}
+  forest: {fileID: 21300000, guid: 54de5ec2dd9ab3142b2ec57a069ecc08, type: 3}
+  desert: {fileID: 21300000, guid: 72ca1f4a68b8e6a4da11c965be3e9bca, type: 3}
+  city: {fileID: 21300000, guid: a981164c6e0da544dad546c6fe846d6f, type: 3}
 --- !u!1 &8362790939239311963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,6 +1498,9 @@ MonoBehaviour:
   parallax2: {fileID: 3007091057772931426}
   speed: 3
   direction: {x: -1, y: 0}
+  OnReachExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8903086495416089635
 GameObject:
   m_ObjectHideFlags: 0

@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37603f808f199584caf91cb1bbcf621c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldSize: 210
+  worldSize: 540
 --- !u!4 &139962785
 Transform:
   m_ObjectHideFlags: 0
@@ -1503,7 +1503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e606519f7459504baa41681bffee7b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingSpeed: 0.45
+  startingSpeed: 2
   speedGainPerLevel: 0.15
   acceleration: 0.5
   deceleration: 3
