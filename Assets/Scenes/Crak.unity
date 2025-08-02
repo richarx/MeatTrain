@@ -390,18 +390,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4059543504168938482, guid: abddff7697efd5849b267f1bc9b963dc, type: 3}
-      propertyPath: m_text
-      value: 'Position : '
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059543504168938482, guid: abddff7697efd5849b267f1bc9b963dc, type: 3}
-      propertyPath: m_fontSize
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 4059543504168938482, guid: abddff7697efd5849b267f1bc9b963dc, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 65
-      objectReference: {fileID: 0}
     - target: {fileID: 4314876276853089824, guid: abddff7697efd5849b267f1bc9b963dc, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -485,14 +473,6 @@ PrefabInstance:
     - target: {fileID: 6502011317751586069, guid: abddff7697efd5849b267f1bc9b963dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9180589816236388607, guid: abddff7697efd5849b267f1bc9b963dc, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 484
-      objectReference: {fileID: 0}
-    - target: {fileID: 9180589816236388607, guid: abddff7697efd5849b267f1bc9b963dc, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -286.29
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

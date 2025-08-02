@@ -1,3 +1,4 @@
+using System;
 using Entities;
 using UnityEngine;
 
@@ -81,6 +82,11 @@ namespace Drag_and_drop
                 else if (ray.distance <= 10f && ray.distance > 0f)
                     shadow.transform.localScale = new Vector3(shadowScale, shadowScale, shadowScale);
             }
+        }
+
+        private void OnDestroy()
+        {
+            DestroyShadow();
         }
     }
 }

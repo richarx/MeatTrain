@@ -39,16 +39,23 @@ namespace Entities
                 yield return null;
             }
         }
+
+        public void AddNewPersistentEntity(PersistentEntity newEntity)
+        {
+            entityPrefabs.Add(newEntity);
+        }
         
-        public void AddNewPersistentEntity(GameObject currentGameObject)
+        public void AddNewPersistentEntity(GameObject currentGameObject, GameObject prefab)
         {
             PersistentEntity entity = new PersistentEntity();
-
-            entity.prefab = currentGameObject.GetComponent<Spawnable>().GetPrefab();
+            
+            entity.prefab = prefab;
             Vector3 position = currentGameObject.transform.position;
             entity.distanceFromStart = ComputeDistanceFromStart(position.x);
             entity.heightOnScreenPercent = ComputeHeightPercent(position.y);
             entity.instance = currentGameObject;
+            
+            entityPrefabs.Add(entity);
         }
 
         private float ComputeDistanceFromStart(float positionX)
@@ -122,7 +129,9 @@ namespace Entities
         {
             float height = mainCamera.WorldToScreenPoint(Vector3.up * heightPosition).y;
 
-            return Screen.height / height;
+            Debug.Log($"ComputeHeightPercent : {heightPosition} => {height} / {Screen.height} = {height / Screen.height}");
+            
+            return height / Screen.height;
         }
     }
 }

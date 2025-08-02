@@ -1,4 +1,4 @@
-using System;
+using MiniMap;
 using TMPro;
 using UnityEngine;
 
@@ -8,6 +8,7 @@ namespace Locomotor
     {
         [SerializeField] private TextMeshProUGUI currentSpeedText;
         [SerializeField] private TextMeshProUGUI distanceText;
+        [SerializeField] private TextMeshProUGUI positionText;
 
         private void Start()
         {
@@ -18,6 +19,7 @@ namespace Locomotor
         private void Update()
         {
             distanceText.text = $"Distance : {GreatLocomotor.instance.DistanceCrawled:F}";
+            positionText.text = $"Position : {Map.instance.ComputePositionOnPlanet():F}";
         }
 
         private void UpdateTexts(float speed)
