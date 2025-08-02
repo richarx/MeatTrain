@@ -7,7 +7,8 @@ namespace Entities
 {
     public class Digestable : MonoBehaviour
     {
-        [HideInInspector] public UnityEvent OnIsEaten = new UnityEvent();
+        [HideInInspector] public UnityEvent OnIsDigested = new UnityEvent();
+        [HideInInspector] public UnityEvent OnStartDigestion = new UnityEvent();
 
         [SerializeField] private float meatValue;
         [HideInInspector] public float MeatValue => meatValue;
@@ -51,6 +52,8 @@ namespace Entities
             if (!draggable.IsFalling)
                 return;
 
+            OnStartDigestion.Invoke();
+
             startDigestionTimeStamp = Time.time;
             MeatWagon.instance.FoodEntered();
 
@@ -72,7 +75,7 @@ namespace Entities
 
         private void DestroyAfterDigestion()
         {
-            OnIsEaten.Invoke();
+            OnIsDigested.Invoke();
             MeatWagon.instance.Eat(this);
 
             // Animation etc

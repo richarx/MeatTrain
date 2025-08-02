@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1583573792693452086}
   - component: {fileID: 1424280422075482603}
   - component: {fileID: 3434068434588852983}
+  - component: {fileID: 8971995268675241}
   - component: {fileID: 533569143649721427}
   - component: {fileID: 3996871596558490214}
   - component: {fileID: 3505587672810616709}
@@ -77,13 +78,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50c2090f522b25043b14d94bdf0c8815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnIsEaten:
+  OnIsDigested:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartDigestion:
     m_PersistentCalls:
       m_Calls: []
   meatValue: 25
   digestionTime: 6
   digestionFallCoefficient: 0.2
   sortingOrderOffset: 0
+--- !u!114 &8971995268675241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2318159408652714967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e63667854b0684e924f7a9790e714e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodParticles:
+  - {fileID: 4682335699828752895, guid: e41560214ea508e419ae5502cf97cf9a, type: 3}
+  - {fileID: 87095716638821451, guid: ad37eed4d28ab774291cdfab19692388, type: 3}
+  - {fileID: 8130165704439340640, guid: 334b56b0bd61baf4687e63c852e95a5c, type: 3}
+  - {fileID: 7492719039021353942, guid: 666e795e8f42e6b4abe464de19b1eccd, type: 3}
+  - {fileID: 5343398588388544243, guid: 5e18119fa6bd6584f8384083d2165155, type: 3}
+  bloodParticleSpawnPositionOffset: {x: 0, y: -0.2}
+  greenMucusParticles:
+  - {fileID: 7173474509315729231, guid: cad8dc8abd1597f49a1dd77a35db3850, type: 3}
+  - {fileID: 247202278176408517, guid: ada51dd28bc11a241830b8348b2369e1, type: 3}
+  - {fileID: 2815922470689716145, guid: e27bb75d098ac6b44bf1b987601dc61f, type: 3}
+  - {fileID: 9007263838461233187, guid: 6fb40e3f4a00ebe4f9b9e9c361682554, type: 3}
+  - {fileID: 8081877286867634132, guid: 41c14983bc6ae3b42aec206999f7cb87, type: 3}
+  greenMucusSpawnPositionOffset: {x: 0, y: 0}
 --- !u!114 &533569143649721427
 MonoBehaviour:
   m_ObjectHideFlags: 0
