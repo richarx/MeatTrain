@@ -15,6 +15,9 @@ namespace Drag_and_drop
         private bool isGrabbing;
         public bool IsGrabbing => isGrabbing;
 
+        private int foodGrabbedCount;
+        public bool grabCountPositive => foodGrabbedCount > 0;
+
         private void Awake()
         {
             instance = this;
@@ -50,6 +53,16 @@ namespace Drag_and_drop
             Vector3 cursorScreenPosition = new Vector3(cursorPixelPosition.x, cursorPixelPosition.y, 10);
 
             transform.position = mainCamera.ScreenToWorldPoint(cursorScreenPosition);
+        }
+
+        public void AddFoodCount()
+        {
+            foodGrabbedCount += 1;
+        }
+
+        public void RemoveFoodCount()
+        {
+            foodGrabbedCount -= 1;
         }
     }
 }

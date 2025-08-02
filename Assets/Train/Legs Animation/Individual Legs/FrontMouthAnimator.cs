@@ -1,3 +1,4 @@
+using Drag_and_drop;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,9 +11,9 @@ public class FrontMouthAnimator : MonoBehaviour
 
     void Update()
     {
-        if (DragAndDrop.Instance.isDragging != hasDragged)
+        if (MultiGrabCursor.instance.grabCountPositive != hasDragged)
         {
-            hasDragged = DragAndDrop.Instance.isDragging;
+            hasDragged = MultiGrabCursor.instance.grabCountPositive;
 
             StopAllCoroutines();
 

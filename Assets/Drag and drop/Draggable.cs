@@ -72,6 +72,7 @@ namespace Drag_and_drop
 
             isBeingDragged = true;
             isFalling = false;
+            MultiGrabCursor.instance.AddFoodCount();
 
             rb.simulated = false;
 
@@ -98,6 +99,7 @@ namespace Drag_and_drop
 
             isBeingDragged = false;
             isFalling = true;
+            MultiGrabCursor.instance.RemoveFoodCount();
 
             fallHeight = Mathf.Clamp(transform.position.y - dropHeight + 0.25f, -4.3f, 0.5f);
 
