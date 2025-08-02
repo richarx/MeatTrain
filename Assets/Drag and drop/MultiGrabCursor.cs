@@ -1,47 +1,55 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MultiGrabCursor : MonoBehaviour
+namespace Drag_and_drop
 {
-    public static MultiGrabCursor instance;
-
-    [SerializeField] private GameObject cursorCollider;
-
-    private bool isGrabbing;
-    public bool IsGrabbing => isGrabbing;
-
-    private void Awake()
+    public class MultiGrabCursor : MonoBehaviour
     {
-        instance = this;
-    }
+        public static MultiGrabCursor instance;
 
-    void Update()
-    {
-        if (isGrabbing != Mouse.current.leftButton.isPressed)
+        [SerializeField] private GameObject cursorCollider;
+
+        private Camera mainCamera;
+        
+        private bool isGrabbing;
+        public bool IsGrabbing => isGrabbing;
+
+        private void Awake()
         {
-            isGrabbing = Mouse.current.leftButton.isPressed;
-            UpdateGrapState();
+            instance = this;
         }
 
-        if (isGrabbing)
-            FollowCursor();
+        private void Start()
+        {
+            mainCamera = Camera.main;
+            UpdateGraphicsState();
+        }
 
-    }
+        private void Update()
+        {
+            if (isGrabbing != Mouse.current.leftButton.isPressed)
+            {
+                isGrabbing = Mouse.current.leftButton.isPressed;
+                UpdateGraphicsState();
+            }
 
-    private void UpdateGrapState()
-    {
-        cursorCollider.SetActive(isGrabbing);
-        Cursor.visible = !isGrabbing;
-    }
+            if (isGrabbing)
+                FollowCursor();
+        }
 
-    private void FollowCursor()
-    {
-        Vector3 cursorPixelPosition = Input.mousePosition;
-        Vector3 cursorScreenPosition = new Vector3(cursorPixelPosition.x, cursorPixelPosition.y, 10);
+        private void UpdateGraphicsState()
+        {
+            cursorCollider.SetActive(isGrabbing);
+            Cursor.visible = !isGrabbing;
+        }
 
-        transform.position = Camera.main.ScreenToWorldPoint(cursorScreenPosition);
+        private void FollowCursor()
+        {
+            Vector3 cursorPixelPosition = Input.mousePosition;
+            Vector3 cursorScreenPosition = new Vector3(cursorPixelPosition.x, cursorPixelPosition.y, 10);
+
+            transform.position = mainCamera.ScreenToWorldPoint(cursorScreenPosition);
+        }
     }
 }

@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/CrakScene.unity
-    guid: a2ab35e0096fcf447a9af56e699bd42a
+    path: Assets/Scenes/newToupScene.unity
+    guid: 265dcec924ccf3d44a9709a586dc6064
   m_configObjects: {}
