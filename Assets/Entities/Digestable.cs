@@ -13,11 +13,13 @@ namespace Entities
 
         [SerializeField] private float digestionTime;
         [SerializeField] private float digestionFallCoefficient;
+        [SerializeField] private int sortingOrderOffset;
 
         private float startDigestionTimeStamp = -1f;
 
         private Rigidbody2D rb;
         private Draggable draggable;
+        private SpriteRenderer spriteRenderer;
 
         public bool isBeingDigested => startDigestionTimeStamp > 0;
 
@@ -25,6 +27,7 @@ namespace Entities
         {
             rb = GetComponent<Rigidbody2D>();
             draggable = GetComponent<Draggable>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         private void Update()
@@ -51,7 +54,22 @@ namespace Entities
             MeatWagon.instance.FoodEntered();
             draggable.DestroyShadow();
 
+            ChangeSortingOrder();
+
             rb.velocity = Vector2.down * (draggable.DropSpeed * digestionFallCoefficient);
+        }
+
+        private void ChangeSortingOrder()
+        {
+            spriteRenderer.sortingOrder = -200 + sortingOrderOffset;
+
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                SpriteRenderer spriteRendererTemp = transform.GetChild(i).GetComponent<SpriteRenderer>();
+
+                if (spriteRendererTemp != null)
+                    spriteRendererTemp.sortingOrder = -200 + sortingOrderOffset;
+            }
         }
 
         private void DestroyAfterDigestion()

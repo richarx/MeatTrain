@@ -76,6 +76,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4802522358477519831}
+  - component: {fileID: 4066618233508169708}
   - component: {fileID: 4511880910489834065}
   - component: {fileID: 1707279073526581927}
   - component: {fileID: 4869640810926587133}
@@ -108,6 +109,25 @@ Transform:
   - {fileID: 7060414101955087402}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4066618233508169708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919080092810896161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c2090f522b25043b14d94bdf0c8815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnIsEaten:
+    m_PersistentCalls:
+      m_Calls: []
+  meatValue: 25
+  digestionTime: 6
+  digestionFallCoefficient: 0.2
+  sortingOrderOffset: 0
 --- !u!114 &4511880910489834065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,8 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e1343998213814fbb4328e805ed99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meatValue: 0
-  dropSpeed: 150
+  dropSpeed: 6
   shadowPrefab: {fileID: 3708990553091076178, guid: 02bdebc0f2ff70442bf2d3269a7f083e, type: 3}
   shadowInteractMask:
     serializedVersion: 2
@@ -134,9 +153,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnFallGround:
-    m_PersistentCalls:
-      m_Calls: []
-  OnIsEaten:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1707279073526581927

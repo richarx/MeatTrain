@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1583573792693452086}
+  - component: {fileID: 3434068434588852983}
   - component: {fileID: 1424280422075482603}
   - component: {fileID: 3505587672810616709}
   - component: {fileID: 995639485292897694}
@@ -18,7 +19,6 @@ GameObject:
   - component: {fileID: 533569143649721427}
   - component: {fileID: 1872345170808780644}
   - component: {fileID: 3996871596558490214}
-  - component: {fileID: 3434068434588852983}
   m_Layer: 7
   m_Name: BlueDude_Back
   m_TagString: Untagged
@@ -42,6 +42,25 @@ Transform:
   - {fileID: 2013542842121971749}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3434068434588852983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2318159408652714967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c2090f522b25043b14d94bdf0c8815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnIsEaten:
+    m_PersistentCalls:
+      m_Calls: []
+  meatValue: 25
+  digestionTime: 6
+  digestionFallCoefficient: 0.2
+  sortingOrderOffset: 0
 --- !u!114 &1424280422075482603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e1343998213814fbb4328e805ed99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropSpeed: 150
+  dropSpeed: 6
   shadowPrefab: {fileID: 3708990553091076178, guid: 02bdebc0f2ff70442bf2d3269a7f083e, type: 3}
   shadowInteractMask:
     serializedVersion: 2
@@ -142,7 +161,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 1696743380, guid: 5b27bd5252ade804184d722558c462f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -261,24 +280,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b5b3052fd4cbb44a837919ea9c278e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3434068434588852983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2318159408652714967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50c2090f522b25043b14d94bdf0c8815, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnIsEaten:
-    m_PersistentCalls:
-      m_Calls: []
-  meatValue: 25
-  digestionTime: 6
-  digestionFallCoefficient: 0.2
 --- !u!1 &4004399001243297947
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 
 public class Draggable : MonoBehaviour
@@ -49,6 +50,12 @@ public class Draggable : MonoBehaviour
         if (digestable.isBeingDigested)
             return;
 
+        if (isBeingDragged)
+            FollowCursor();
+
+        if (isBeingDragged && !MultiGrabCursor.instance.IsGrabbing)
+            Drop();
+
         if (shadow != null)
             ShadowScale();
 
@@ -59,14 +66,17 @@ public class Draggable : MonoBehaviour
             StopFalling();
     }
 
-    private void OnMouseDown()
-    {
-        Drag();
+    private void OnTriggerEnter2D(Collider2D collider)
+    {   
+        if (MultiGrabCursor.instance.IsGrabbing && collider.CompareTag("Cursor") && !isBeingDragged)
+        {
+            Drag();
+        }
     }
 
-    private void OnMouseUp()
+    private void Yeet()
     {
-        Drop();
+
     }
 
     private void Drag()
@@ -76,10 +86,10 @@ public class Draggable : MonoBehaviour
 
         OnDrag.Invoke();
 
+        isBeingDragged = true;
         isFalling = false;
 
-        DragAndDrop.Instance.Register(this.gameObject);
-        isBeingDragged = true;
+        rb.simulated = false;
 
         if (squeeze != null)
             squeeze.Trigger();
@@ -91,15 +101,22 @@ public class Draggable : MonoBehaviour
             shadow = Instantiate(shadowPrefab, transform.position - new Vector3(0, 0.25f, 0), Quaternion.identity);
     }
 
+    private void FollowCursor()
+    {
+        transform.position = MultiGrabCursor.instance.transform.position;
+        //MoveTowards
+    }
+
     private void Drop()
     {
         OnDrop.Invoke();
 
-        DragAndDrop.Instance.UnRegister();
         isBeingDragged = false;
         isFalling = true;
 
-        rb.velocity = Vector2.down * dropSpeed * Time.fixedDeltaTime;
+        rb.simulated = true;
+
+        rb.velocity = Vector2.down * dropSpeed;
     }
     public void DestroyShadow()
     {
