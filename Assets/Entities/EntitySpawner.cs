@@ -20,14 +20,41 @@ namespace Entities
     {
         [SerializeField] List<PersistentEntity> entityPrefabs;
 
-        IEnumerator Start()
+        public static EntitySpawner instance;
+
+        private Camera mainCamera;
+        
+        private void Awake()
         {
+            instance = this;
+        }
+
+        private IEnumerator Start()
+        {
+            mainCamera = Camera.main;
             InitializeScene();
             while (true)
             {
                 CheckForEntitiesToSpawn();
                 yield return null;
             }
+        }
+        
+        public void AddNewPersistentEntity(GameObject currentGameObject)
+        {
+            PersistentEntity entity = new PersistentEntity();
+
+            entity.prefab = currentGameObject.GetComponent<Spawnable>().GetPrefab();
+            Vector3 position = currentGameObject.transform.position;
+            entity.distanceFromStart = ComputeDistanceFromStart(position.x);
+            entity.heightOnScreenPercent = ComputeHeightPercent(position.y);
+            entity.instance = currentGameObject;
+        }
+
+        private float ComputeDistanceFromStart(float positionX)
+        {
+            float position = Map.instance.ComputePositionOnPlanet();
+            return position + positionX;
         }
 
         private void InitializeScene()
@@ -76,7 +103,7 @@ namespace Entities
             if (x < 0.0f)
                 x += Map.instance.WorldSize;
             
-            float y = ComputeHeight(entity.heightOnScreenPercent);
+            float y = ComputeHeightPosition(entity.heightOnScreenPercent);
             Vector3 position = new Vector3(x, y, 0.0f);
             GameObject spawn = Instantiate(entity.prefab, position, Quaternion.identity);
             entity.instance = spawn;
@@ -84,11 +111,18 @@ namespace Entities
             return entity;
         }
 
-        private float ComputeHeight(float heightPercent)
+        private float ComputeHeightPosition(float heightPercent)
         {
             float screenPosition = Screen.height * heightPercent;
             
-            return Camera.main.ScreenToWorldPoint(Vector3.up * screenPosition).y;
+            return mainCamera.ScreenToWorldPoint(Vector3.up * screenPosition).y;
+        }
+
+        private float ComputeHeightPercent(float heightPosition)
+        {
+            float height = mainCamera.WorldToScreenPoint(Vector3.up * heightPosition).y;
+
+            return Screen.height / height;
         }
     }
 }
