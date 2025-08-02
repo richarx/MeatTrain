@@ -77,6 +77,7 @@ namespace Entities
         {
             OnIsDigested.Invoke();
             MeatWagon.instance.Eat(this);
+            EntitySpawner.instance.DeletePersistentEntity(gameObject);
 
             Destroy(this.gameObject);
         }

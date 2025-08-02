@@ -10,9 +10,12 @@ namespace Entities
     public class PersistentEntity
     {
         public GameObject prefab;
+     
+        [Space]
         public float distanceFromStart;
         [Range(0.0f, 1.0f)] public float heightOnScreenPercent;
-        [HideInInspector] public GameObject instance;
+        
+        [HideInInspector] public GameObject instance = null;
         public bool isSpawned => instance != null;
     }
     
@@ -39,10 +42,24 @@ namespace Entities
                 yield return null;
             }
         }
-
-        public void AddNewPersistentEntity(PersistentEntity newEntity)
+        
+        public void DeletePersistentEntity(GameObject toBeDeleted)
         {
-            entityPrefabs.Add(newEntity);
+            int index = entityPrefabs.FindIndex((e) => e.instance == toBeDeleted);
+            
+            if (index >= 0 && index < entityPrefabs.Count)
+                entityPrefabs.RemoveAt(index);
+        }
+
+        public void AddNewPersistentEntity(GameObject prefab, Vector2 position)
+        {
+            PersistentEntity entity = new PersistentEntity();
+            
+            entity.prefab = prefab;
+            entity.distanceFromStart = position.x;
+            entity.heightOnScreenPercent = position.y;
+            
+            entityPrefabs.Add(entity);
         }
         
         public void AddNewPersistentEntity(GameObject currentGameObject, GameObject prefab)

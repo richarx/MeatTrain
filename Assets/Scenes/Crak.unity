@@ -1588,6 +1588,7 @@ GameObject:
   - component: {fileID: 1558219779}
   - component: {fileID: 1558219778}
   - component: {fileID: 1558219777}
+  - component: {fileID: 1558219780}
   m_Layer: 0
   m_Name: FoodSpawner
   m_TagString: Untagged
@@ -1687,6 +1688,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1558219780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558219776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06dfeb5d785df994392a2a0299042163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entitiesToFillWorld:
+  - prefab: {fileID: 1454368094839182814, guid: ea4c50cbcf207a34ba29740e7d54fb6f, type: 3}
+    requiredLevelToSpawn: 1
+    minCount: 30
+    maxCount: 40
+    minDistanceFromStart: 10
+    maxDistanceFromStart: 170
+    minHeightOnScreen: 0.15
+    maxHeightOnScreen: 0.4
+  - prefab: {fileID: 2318159408652714967, guid: 98f4ebd4c8c760743ae840b6566fed70, type: 3}
+    requiredLevelToSpawn: 1
+    minCount: 30
+    maxCount: 40
+    minDistanceFromStart: 370
+    maxDistanceFromStart: 530
+    minHeightOnScreen: 0.15
+    maxHeightOnScreen: 0.4
 --- !u!1 &1568339919
 GameObject:
   m_ObjectHideFlags: 0

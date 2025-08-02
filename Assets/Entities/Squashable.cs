@@ -2,6 +2,7 @@ using Drag_and_drop;
 using Locomotor;
 using System.Collections;
 using System.Collections.Generic;
+using Entities;
 using Train.Eat_on_Collision;
 using UnityEngine;
 using UnityEngine.Events;
@@ -27,6 +28,8 @@ public class Squashable : MonoBehaviour
     {
         OnSquash.Invoke();
         MeatWagon.instance.EatSound();
+        EntitySpawner.instance.DeletePersistentEntity(gameObject);
+
         Destroy(this.gameObject);
     }
 }

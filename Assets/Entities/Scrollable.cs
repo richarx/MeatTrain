@@ -1,40 +1,42 @@
 using Drag_and_drop;
 using Locomotor;
-using Entities;
 using UnityEngine;
 
-public class Scrollable : MonoBehaviour
+namespace Entities
 {
-    private float currentSpeed;
-
-    private Draggable draggable;
-    private Digestable digestable;
-
-
-    void Start()
+    public class Scrollable : MonoBehaviour
     {
-        draggable = GetComponent<Draggable>();
-        digestable = GetComponent<Digestable>();
-    }
+        private float currentSpeed;
 
-    void Update()
-    {
-        if (draggable == null || digestable == null)
+        private Draggable draggable;
+        private Digestable digestable;
+
+
+        void Start()
         {
-            Scroll();
-            return;
+            draggable = GetComponent<Draggable>();
+            digestable = GetComponent<Digestable>();
         }
 
-        if (!draggable.IsBeingDragged && !draggable.IsFalling && !digestable.isBeingDigested)
-            Scroll();
-    }
-
-    private void Scroll()
-    {
-        if (GreatLocomotor.instance != null)
+        void Update()
         {
-            currentSpeed = GreatLocomotor.instance.CurrentSpeed * 7f;
-            transform.position += (Vector3.left * (currentSpeed * Time.deltaTime));
+            if (draggable == null || digestable == null)
+            {
+                Scroll();
+                return;
+            }
+
+            if (!draggable.IsBeingDragged && !draggable.IsFalling && !digestable.isBeingDigested)
+                Scroll();
+        }
+
+        private void Scroll()
+        {
+            if (GreatLocomotor.instance != null)
+            {
+                currentSpeed = GreatLocomotor.instance.CurrentSpeed * 7f;
+                transform.position += (Vector3.left * (currentSpeed * Time.deltaTime));
+            }
         }
     }
 }
