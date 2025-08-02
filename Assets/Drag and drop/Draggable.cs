@@ -1,4 +1,5 @@
 using Entities;
+using Juice;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,19 +8,18 @@ namespace Drag_and_drop
     public class Draggable : MonoBehaviour
     {
         [SerializeField] private float dropSpeed;
-        public float DropSpeed => dropSpeed;
-
-        [SerializeField] private GameObject shadowPrefab;
-        [SerializeField] private LayerMask shadowInteractMask;
-        [HideInInspector] public GameObject shadow;
+        [SerializeField] private float dropHeight;
 
         [HideInInspector] public UnityEvent OnDrag = new UnityEvent();
         [HideInInspector] public UnityEvent OnDrop = new UnityEvent();
         [HideInInspector] public UnityEvent OnFallGround = new UnityEvent();
 
+        public float DropSpeed => dropSpeed;
+        public float DropHeight => dropHeight;
         public bool IsBeingDragged => isBeingDragged;
         private bool isBeingDragged;
         private Vector3 followOffset;
+        private float fallHeight;
 
         public bool IsFalling => isFalling;
         private bool isFalling;
@@ -28,8 +28,6 @@ namespace Drag_and_drop
         private Blink blink;
         private Rigidbody2D rb;
         private Digestable digestable;
-
-        private RaycastHit2D ray;
 
         private void Start()
         {
@@ -50,22 +48,14 @@ namespace Drag_and_drop
             if (isBeingDragged && !MultiGrabCursor.instance.IsGrabbing)
                 Drop();
 
-            if (shadow != null)
-                ShadowScale();
-
-            if (!isFalling && shadow != null)
-                ShadowFollow();
-
-            if (isFalling && shadow != null && transform.position.y < shadow.transform.position.y + 0.5f)
+            if (isFalling && transform.position.y < fallHeight)
                 StopFalling();
         }
 
         private void OnTriggerEnter2D(Collider2D collider)
         {   
             if (MultiGrabCursor.instance.IsGrabbing && collider.CompareTag("Cursor") && !isBeingDragged)
-            {
                 Drag();
-            }
         }
 
         private void Yeet()
@@ -95,9 +85,6 @@ namespace Drag_and_drop
 
             if (blink != null)
                 blink.Trigger();
-
-            if (shadow == null)
-                shadow = Instantiate(shadowPrefab, transform.position - new Vector3(0, 0.25f, 0), Quaternion.identity);
         }
 
         private void FollowCursor()
@@ -112,15 +99,10 @@ namespace Drag_and_drop
             isBeingDragged = false;
             isFalling = true;
 
+            fallHeight = Mathf.Clamp(transform.position.y - dropHeight + 0.25f, -4.3f, 0.5f);
+
             rb.simulated = true;
-
             rb.velocity = Vector2.down * dropSpeed;
-        }
-
-        public void DestroyShadow()
-        {
-            if (shadow != null)
-                Destroy(shadow);
         }
 
         private void StopFalling()
@@ -129,27 +111,6 @@ namespace Drag_and_drop
 
             rb.velocity = Vector2.zero;
             isFalling = false;
-            DestroyShadow();
-        }
-
-        private void ShadowFollow()
-        {
-            //4.3 f min ground height size - 0.5 max ground height size
-            shadow.transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y - 0.5f, -4.3f, 0.5f), 0);
-        }
-
-        private void ShadowScale()
-        {
-            ray = Physics2D.Raycast(transform.position, Vector2.down, 1000f, shadowInteractMask);
-            float shadowScale = Mathf.Clamp((10 - ray.distance) / 10, 0.25f, 1f);
-
-            if (shadow != null)
-            {
-                if (ray.distance > 10f)
-                    shadow.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
-                else if (ray.distance <= 10f && ray.distance > 0f)
-                    shadow.transform.localScale = new Vector3(shadowScale, shadowScale, shadowScale);
-            }
         }
     }
 }

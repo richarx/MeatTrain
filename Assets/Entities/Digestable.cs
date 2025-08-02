@@ -20,7 +20,6 @@ namespace Entities
 
         private Rigidbody2D rb;
         private Draggable draggable;
-        private SpriteRenderer spriteRenderer;
 
         public bool isBeingDigested => startDigestionTimeStamp > 0;
 
@@ -28,7 +27,6 @@ namespace Entities
         {
             rb = GetComponent<Rigidbody2D>();
             draggable = GetComponent<Draggable>();
-            spriteRenderer = GetComponent<SpriteRenderer>();
 
             meatValue += Random.Range(-2, 2);
         }
@@ -55,7 +53,6 @@ namespace Entities
 
             startDigestionTimeStamp = Time.time;
             MeatWagon.instance.FoodEntered();
-            draggable.DestroyShadow();
 
             ChangeSortingOrder();
 
@@ -64,8 +61,6 @@ namespace Entities
 
         private void ChangeSortingOrder()
         {
-            spriteRenderer.sortingOrder = -200 + sortingOrderOffset;
-
             for (int i = 0; i < transform.childCount; i++)
             {
                 SpriteRenderer spriteRendererTemp = transform.GetChild(i).GetComponent<SpriteRenderer>();

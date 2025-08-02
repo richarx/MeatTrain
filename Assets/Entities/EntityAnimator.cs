@@ -1,27 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using Drag_and_drop;
 using UnityEngine;
 
-public class EntityAnimator : MonoBehaviour
+namespace Entities
 {
-    private Draggable draggable;
-    private Animator animator;
-
-    void Start()
+    public class EntityAnimator : MonoBehaviour
     {
-        draggable = GetComponent<Draggable>();
-        animator = GetComponent<Animator>();
-    }
+        [SerializeField] private Animator animator;
+        
+        private Draggable draggable;
 
-    void Update()
-    {
-        if (animator == null)
-            return;
+        void Start()
+        {
+            draggable = GetComponent<Draggable>();
+            animator = GetComponent<Animator>();
+        }
 
-        if (draggable.IsBeingDragged)
-            animator.Play("Grabbed");
-        else
-            animator.Play("Idle");
+        void Update()
+        {
+            if (animator == null)
+                return;
+
+            if (draggable.IsBeingDragged)
+                animator.Play("Grabbed");
+            else
+                animator.Play("Idle");
+        }
     }
 }

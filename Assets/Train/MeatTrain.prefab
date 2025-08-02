@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 5031141071537464164}
   - component: {fileID: 8531713014112079179}
   m_Layer: 8
-  m_Name: MouthCollider
+  m_Name: Mouth_Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,9 +199,9 @@ PolygonCollider2D:
     - - {x: 1.0699041, y: 0.106803894}
       - {x: 0.97003484, y: 0.16563284}
       - {x: 0.9368231, y: 0.17123473}
-      - {x: 0.8611002, y: 0.14563882}
-      - {x: 0.7849026, y: 0.08770275}
-      - {x: 0.72646594, y: 0.020728946}
+      - {x: 0.81943345, y: 0.15952766}
+      - {x: 0.7386062, y: 0.11548042}
+      - {x: 0.6570213, y: 0.03461778}
       - {x: 1.2067652, y: -0.28675115}
       - {x: 1.2708147, y: -0.7146442}
       - {x: 1.2062635, y: -1.0362222}
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 2816628347536535578}
   m_Layer: 8
   m_Name: Mouth
-  m_TagString: Untagged
+  m_TagString: StomachTrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -344,8 +344,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.04487182, y: -0.943879}
-  m_Size: {x: 2.671422, y: 0.90820134}
+  m_Offset: {x: 0.05151454, y: -0.7620069}
+  m_Size: {x: 2.2326224, y: 0.5444594}
   m_Direction: 1
 --- !u!114 &984858701574614870
 MonoBehaviour:
@@ -693,7 +693,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -250
   m_Sprite: {fileID: 1535837087, guid: 7911e9a6b3021ab4cb12096291748ac6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -837,7 +837,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -250
   m_Sprite: {fileID: -1402881197, guid: 7911e9a6b3021ab4cb12096291748ac6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1472,7 +1472,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.004359341, y: -0.2005414}
@@ -1933,7 +1933,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.09549095, y: -0.010492493}
