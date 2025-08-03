@@ -1,5 +1,6 @@
 using Entities;
 using Juice;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +11,7 @@ namespace Drag_and_drop
         [SerializeField] private float dropSpeed;
         [SerializeField] private float dropHeight;
         [SerializeField] private Collider2D hitbox;
+        [SerializeField] private List<AudioClip> dragSounds;
 
         [HideInInspector] public UnityEvent OnDrag = new UnityEvent();
         [HideInInspector] public UnityEvent OnDrop = new UnityEvent();
@@ -85,6 +87,8 @@ namespace Drag_and_drop
 
             followOffset = new Vector2(followOffsetx, followOffsety);
 
+            PlayDragSound();
+
             if (squeeze != null)
                 squeeze.Trigger();
 
@@ -117,6 +121,14 @@ namespace Drag_and_drop
 
             rb.velocity = Vector2.zero;
             isFalling = false;
+        }
+
+        private void PlayDragSound()
+        {
+            if (dragSounds == null)
+                return;
+
+            SFXManager.Instance.PlayRandomSFX(dragSounds);
         }
     }
 }

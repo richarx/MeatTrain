@@ -781,6 +781,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeatTrain
       objectReference: {fileID: 0}
+    - target: {fileID: 8333686187898382536, guid: 827a4dd6cf225c44e9905c463c085d54, type: 3}
+      propertyPath: crawlingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a8ca78a5368ee44a94cb390c4b9af5a, type: 3}
+    - target: {fileID: 8333686187898382536, guid: 827a4dd6cf225c44e9905c463c085d54, type: 3}
+      propertyPath: finalCrawlingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0ee7459f9f715cb4992911073066ce37, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

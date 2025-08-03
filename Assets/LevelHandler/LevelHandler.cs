@@ -26,9 +26,13 @@ namespace LevelHandler
 
         [SerializeField] private Image bloodOverlay;
 
-        private void Start()
+        private void Awake()
         {
             Instance = this;
+        }
+
+        private void Start()
+        {
             MeatWagon.OnMeatWagonFull.AddListener(DisplayToolTip);
 
             bloodOverlay.gameObject.SetActive(false);
