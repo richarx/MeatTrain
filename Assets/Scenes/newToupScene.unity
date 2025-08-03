@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f72a81261cca3342854d04699100dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxGrapPerLevel: 010000000300000006000000090000000c0000000f000000
   cameraTransform: {fileID: 519420032}
   levelUpSounds:
   - {fileID: 8300000, guid: 9f71fd6c7fe754e43a18ba460a779215, type: 3}

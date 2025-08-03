@@ -424,4 +424,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialScale: 0.75
-  scaleFactorPerLevel: 0.17
+  scaleFactorPerLevel: 0.12

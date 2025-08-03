@@ -28,7 +28,7 @@ public class TrainAnimation : MonoBehaviour
 
     private void Update()
     {
-        currentCrawlingSound.volume = Mathf.Clamp(Tools.Tools.NormalizeValueInRange(GreatLocomotor.instance.CurrentSpeed, 0, 2.0f, 0, 0.3f), 0, 0.3f);
+        currentCrawlingSound.volume = Mathf.Clamp(Tools.Tools.NormalizeValueInRange(GreatLocomotor.instance.CurrentSpeed, 0, 2.0f, 0, 0.5f), 0, 0.5f);
     }
 
     private IEnumerator Shake(Transform target)

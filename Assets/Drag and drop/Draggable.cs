@@ -60,7 +60,7 @@ namespace Drag_and_drop
         }
 
         private void OnTriggerEnter2D(Collider2D collider)
-        {   
+        {
             if (MultiGrabCursor.instance.IsGrabbing && collider.CompareTag("Cursor") && !isBeingDragged)
                 Drag();
         }
@@ -76,6 +76,9 @@ namespace Drag_and_drop
                 return;
 
             if (LevelHandler.LevelHandler.Instance.CurrentLevel < cantGrabBeforeLevel)
+                return;
+
+            if (!CanGrap())
                 return;
 
             OnDrag.Invoke();
@@ -134,6 +137,11 @@ namespace Drag_and_drop
                 return;
 
             SFXManager.Instance.PlayRandomSFX(dragSounds);
+        }
+
+        private bool CanGrap()
+        {
+            return MultiGrabCursor.instance.FoodGrabbedCount < LevelHandler.LevelHandler.Instance.MaxGrapPerLevel[LevelHandler.LevelHandler.Instance.CurrentLevel - 1];
         }
     }
 }

@@ -21,10 +21,12 @@ namespace LevelHandler
         private float levelUpAnimationDuration = 1.5f;
         public float LevelUpAnimationDuration => levelUpAnimationDuration;
 
+        [SerializeField] private List<int> maxGrapPerLevel;
+        [HideInInspector] public List<int> MaxGrapPerLevel => maxGrapPerLevel;
+
         [SerializeField] private Transform cameraTransform;
         [SerializeField] private List<AudioClip> levelUpSounds;
         [SerializeField] private AudioClip evolvingSound;
-
 
         [SerializeField] private Image bloodOverlay;
 

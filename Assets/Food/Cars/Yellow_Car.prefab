@@ -229,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropSpeed: 6
   dropHeight: 1.5
-  cantGrabBeforeLevel: 2
+  cantGrabBeforeLevel: 3
   hitbox: {fileID: 6931200840845249599}
   dragSounds:
   - {fileID: 8300000, guid: bd3187d0a9b6ed8458540a89f31148c0, type: 3}

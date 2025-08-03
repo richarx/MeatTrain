@@ -21,6 +21,7 @@ namespace Drag_and_drop
         public bool IsGrabbing => isGrabbing;
 
         private int foodGrabbedCount;
+        public int FoodGrabbedCount => foodGrabbedCount;
         public bool grabCountPositive => foodGrabbedCount > 0;
 
         private void Awake()

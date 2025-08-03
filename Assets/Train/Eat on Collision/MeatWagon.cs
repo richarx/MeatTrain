@@ -113,7 +113,7 @@ namespace Train.Eat_on_Collision
 
         public void EatSound()
         {
-            SFXManager.Instance.PlayRandomSFX(eating);
+            SFXManager.Instance.PlayRandomSFX(eating, volume: 0.08f);
         }
 
         private void SpawnMeatScore(float meatValue)
