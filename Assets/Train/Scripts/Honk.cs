@@ -20,7 +20,7 @@ public class Honk : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.fKey.wasPressedThisFrame && isHonking == false)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && isHonking == false)
             StartCoroutine(OnHonkInput());
     }
     private IEnumerator OnHonkInput()

@@ -1,3 +1,5 @@
+using Locomotor;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Train.Eat_on_Collision;
@@ -40,16 +42,57 @@ namespace LevelHandler
             MeatWagon.OnMeatWagonFull.AddListener(DisplayToolTip);
 
             bloodOverlay.gameObject.SetActive(false);
+
+            DisplayFirstLevelPrompt();
+        }
+
+        private void DisplayFirstLevelPrompt()
+        {
+            var tooltip = ToolTipManager.instance.DisplayToolTip("Press A and D to Move");
+
+            int count = 0;
+            bool displayFirstPopup = false;
+            bool displaySecondPopup = false;
+            bool displayThirdPopup = false;
+
+            GreatLocomotor.OnAccelerate.AddListener(() =>
+            {
+                count++;
+
+                if (count > 10 && displayFirstPopup == false)
+                {
+                    tooltip = ToolTipManager.instance.DisplayToolTip("Press R to brake");
+                    displayFirstPopup = true;
+                }
+            });
+
+            GreatLocomotor.OnBrake.AddListener(() => 
+            {
+                if (displaySecondPopup == false && displayFirstPopup == true)
+                {
+                    tooltip = ToolTipManager.instance.DisplayToolTip("Drag and drop food \nin the middle wagon");
+                    displaySecondPopup = true;
+                }
+            });
+
+            MeatWagon.OnStartEat.AddListener(() =>
+            {
+                if (displayFirstPopup == true && displaySecondPopup == true && displayThirdPopup == false)
+                {
+                    tooltip = ToolTipManager.instance.DisplayToolTip("Eat away !", 3.0f);
+                    displayThirdPopup = true;
+                }
+            });
         }
 
         private void DisplayToolTip()
         {
-            ToolTipManager.instance.DisplayToolTip($"Press L to $Evolve$\n[{currentLevel}/6]");
+            ToolTipManager.instance.DisplayToolTip($"Press Space to $Evolve$\n[{currentLevel}/6]");
         }
 
         private void Update()
         {
-            if (MeatWagon.instance.isFull && Keyboard.current.lKey.wasPressedThisFrame)
+            if (MeatWagon.instance.isFull && Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 ToolTipManager.instance.DisplayToolTip(ComputeLevelUpText(), 2.0f);
                 ChangeLevel();
@@ -63,6 +106,7 @@ namespace LevelHandler
             PlayLevelUpSound();
             ScreenShake();
             StartCoroutine(DisplayOverlay());
+            StartCoroutine(DisplayHonkPrompt());
         }
 
         private string ComputeLevelUpText()
@@ -101,6 +145,15 @@ namespace LevelHandler
             yield return Tools.Tools.Fade(bloodOverlay, 0.3f, false, 0, 0.3f);
 
             bloodOverlay.gameObject.SetActive(false);
+        }
+
+        private IEnumerator DisplayHonkPrompt()
+        {
+            if (currentLevel != 3)
+                yield break;
+
+            yield return new WaitForSeconds(5.0f);
+            ToolTipManager.instance.DisplayToolTip("Press Space to Honk", 3.0f);
         }
     }
 }

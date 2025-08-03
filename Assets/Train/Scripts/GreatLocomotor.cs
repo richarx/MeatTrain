@@ -24,6 +24,7 @@ namespace Locomotor
         public static UnityEvent<float> OnUpdateSpeed = new UnityEvent<float>();
 
         public static UnityEvent OnAccelerate = new UnityEvent();
+        public static UnityEvent OnBrake = new UnityEvent();
 
         public static GreatLocomotor instance;
 
@@ -80,7 +81,9 @@ namespace Locomotor
         {
             if (allGasNoBrakes)
                 return;
-            
+
+            OnBrake.Invoke();
+
             targetSpeed -= targetSpeedDecreaseOnHold * Time.deltaTime;
             targetSpeed = Mathf.Max(targetSpeed, 0);
         }

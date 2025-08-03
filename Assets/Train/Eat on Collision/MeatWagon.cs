@@ -11,6 +11,7 @@ namespace Train.Eat_on_Collision
     {
         public static UnityEvent OnMeatWagonFull = new UnityEvent();
         public static UnityEvent<float> OnEat = new UnityEvent<float>();
+        public static UnityEvent OnStartEat = new UnityEvent();
 
         [SerializeField] private SpriteRenderer meatSpriteRenderer;
         [SerializeField] public List<Sprite> meatStockSprites;
@@ -52,6 +53,7 @@ namespace Train.Eat_on_Collision
         {
             EatSound();
             squeeze.Trigger();
+            OnStartEat.Invoke();
         }
 
         public void Eat(Digestable food)

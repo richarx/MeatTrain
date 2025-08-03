@@ -7,10 +7,24 @@ namespace Inputs
 {
     public class PlayerInput : MonoBehaviour
     {
+        private bool isNextAny = true;
+        private bool isNextLeft;
+
         private void Update()
         {
-            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            bool left = CheckLeftInput();
+            bool right = CheckRightInput();
+
+            if (isNextAny || (left && isNextLeft) || (right && !isNextLeft))
+            {
+                if (isNextAny)
+                {
+                    isNextAny = false;
+                    isNextLeft = left;
+                }
+
                 OnPressInput();
+            }
 
             if (Keyboard.current.rKey.isPressed)
                 OnSlowInput();
@@ -18,7 +32,19 @@ namespace Inputs
 
         private void OnPressInput()
         {
+            isNextLeft = !isNextLeft;
+
             GreatLocomotor.instance.AddSpeed();
+        }
+
+        private bool CheckLeftInput()
+        {
+            return Keyboard.current.qKey.wasPressedThisFrame || Keyboard.current.aKey.wasPressedThisFrame;
+        }
+
+        private bool CheckRightInput()
+        {
+            return Keyboard.current.dKey.wasPressedThisFrame;
         }
 
         private void OnSlowInput()
