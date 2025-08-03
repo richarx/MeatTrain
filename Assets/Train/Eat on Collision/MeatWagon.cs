@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Entities;
 using UnityEngine;
 using UnityEngine.Events;
+using VFX.Meat_Score;
 
 namespace Train.Eat_on_Collision
 {
@@ -13,6 +14,10 @@ namespace Train.Eat_on_Collision
 
         [SerializeField] private SpriteRenderer meatSpriteRenderer;
         [SerializeField] public List<Sprite> meatStockSprites;
+        
+        [Space]
+        [SerializeField] public MeatScore meatScorePrefab;
+        [SerializeField] public Transform meatScorePivot;
 
         [SerializeField] private List<AudioClip> eating;
 
@@ -61,6 +66,8 @@ namespace Train.Eat_on_Collision
 
             MeatCount += food.MeatValue;
             Debug.Log(MeatCount);
+            
+            SpawnMeatScore(food.MeatValue);
 
             OnEat.Invoke(MeatCount);
 
@@ -98,6 +105,12 @@ namespace Train.Eat_on_Collision
         public void EatSound()
         {
             SFXManager.Instance.PlayRandomSFX(eating);
+        }
+
+        private void SpawnMeatScore(float meatValue)
+        {
+            MeatScore score = Instantiate(meatScorePrefab, meatScorePivot.position, Quaternion.identity);
+            score.Setup(meatValue);
         }
     }
 }

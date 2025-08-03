@@ -127,9 +127,9 @@ namespace Tools
             text.color = color;
         }
 
-        public static IEnumerator Fade(Image sprite, float duration, bool fadeIn, float maxFade = 1.0f, bool scaledTime = true)
+        public static IEnumerator Fade(Image sprite, float duration, bool fadeIn, float minFade = 0.0f, float maxFade = 1.0f, bool scaledTime = true)
         {
-            float fade = fadeIn ? 0.0f : maxFade;
+            float fade = fadeIn ? minFade : maxFade;
             float timer = duration;
             float increment = maxFade / timer;
             Color color = sprite.color;
@@ -146,7 +146,7 @@ namespace Tools
                 yield return null;
             }
 
-            color.a = fadeIn ? maxFade : 0.0f;
+            color.a = fadeIn ? maxFade : minFade;
             sprite.color = color;
         }
 

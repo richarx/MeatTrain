@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &289789727486068375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1944732968950163666}
+  m_Layer: 9
+  m_Name: Score Pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1944732968950163666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289789727486068375}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.82, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2016788801067550374}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &368260283602738617
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +401,8 @@ MonoBehaviour:
   - {fileID: -510027136, guid: 7a11bec8844544f45bd9c9162ce6c527, type: 3}
   - {fileID: 2001840405, guid: 7a11bec8844544f45bd9c9162ce6c527, type: 3}
   - {fileID: -132358396, guid: 7a11bec8844544f45bd9c9162ce6c527, type: 3}
+  meatScorePrefab: {fileID: 7789275213115889009, guid: d20d176238e07344f8d14d704c1ea67e, type: 3}
+  meatScorePivot: {fileID: 1944732968950163666}
   eating:
   - {fileID: 8300000, guid: 356c5b162cc7c6d48bd83456f4bdb635, type: 3}
   - {fileID: 8300000, guid: d4fa7a41229234441973ca33cbd9a95e, type: 3}
@@ -1456,6 +1489,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5341260380233055403}
+  - {fileID: 1944732968950163666}
   m_Father: {fileID: 5034196851178404340}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1676114667551658012

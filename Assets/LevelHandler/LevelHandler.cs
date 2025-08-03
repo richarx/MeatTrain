@@ -54,12 +54,12 @@ namespace LevelHandler
         {
             string[] array = new[]
             {
-                "More...",
-                "Need More...",
-                "More meat...",
-                "Where meat ?..",
-                "So Hungry...",
-                "Not enough...",
+                "more...",
+                "need more...",
+                "more meat...",
+                "where meat ?..",
+                "So hungry...",
+                "not enough...",
             };
 
             if (currentLevel > array.Length)

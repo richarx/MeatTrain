@@ -565,6 +565,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 984858701574614870, guid: 827a4dd6cf225c44e9905c463c085d54, type: 3}
+      propertyPath: meatScorePrefab
+      value: 
+      objectReference: {fileID: 6952785759981988908, guid: d20d176238e07344f8d14d704c1ea67e, type: 3}
     - target: {fileID: 5034196851178404340, guid: 827a4dd6cf225c44e9905c463c085d54, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.33
@@ -812,37 +816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1132dd51f80c8c408a6a16731f15eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1223598378
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1223598379}
-  m_Layer: 0
-  m_Name: pivo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1223598379
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1223598378}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.254, y: 0.69, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1270762908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,14 +1077,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 145382014398917739, guid: bdc21fde8ae8e2f4d9d3f25ed716d35a, type: 3}
-      propertyPath: isScaling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3101370083313922071, guid: bdc21fde8ae8e2f4d9d3f25ed716d35a, type: 3}
-      propertyPath: isScaling
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4859721345633221078, guid: bdc21fde8ae8e2f4d9d3f25ed716d35a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1155,10 +1120,6 @@ PrefabInstance:
     - target: {fileID: 8180334750197554705, guid: bdc21fde8ae8e2f4d9d3f25ed716d35a, type: 3}
       propertyPath: m_Name
       value: Parallax
-      objectReference: {fileID: 0}
-    - target: {fileID: 8594374960593896188, guid: bdc21fde8ae8e2f4d9d3f25ed716d35a, type: 3}
-      propertyPath: isScaling
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1500,5 +1461,4 @@ SceneRoots:
   - {fileID: 123327480}
   - {fileID: 572695519}
   - {fileID: 1182286171259973538}
-  - {fileID: 1223598379}
   - {fileID: 1660750449}
