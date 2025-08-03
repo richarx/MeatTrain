@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 7382732846994175405}
   - component: {fileID: 1449621476223692635}
   - component: {fileID: 8404714565562467152}
+  - component: {fileID: -8747434603377965279}
   m_Layer: 7
   m_Name: BlueDude_Back
   m_TagString: Untagged
@@ -292,6 +293,20 @@ MonoBehaviour:
   chancesToSpeak: 0.3
   spawnDialogOffset: {x: 0, y: 1.5}
   npc: 0
+--- !u!114 &-8747434603377965279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2318159408652714967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc98aafe1453524f853c696250c3959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialScale: 1
+  scaleFactorPerLevel: 0.1
 --- !u!1 &4004399001243297947
 GameObject:
   m_ObjectHideFlags: 0

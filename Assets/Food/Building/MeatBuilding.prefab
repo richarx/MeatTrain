@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 7857894112177353572}
   - component: {fileID: 1222898164608190854}
   - component: {fileID: 4809199083522687990}
+  - component: {fileID: 4921965921302178555}
   m_Layer: 7
   m_Name: MeatBuilding
   m_TagString: Untagged
@@ -407,3 +408,17 @@ MonoBehaviour:
   shadowInteractMask:
     serializedVersion: 2
     m_Bits: 832
+--- !u!114 &4921965921302178555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7198121065123805962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc98aafe1453524f853c696250c3959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialScale: 1
+  scaleFactorPerLevel: 0.1

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7457164779972064246}
   - component: {fileID: 1748817324460070202}
   - component: {fileID: 5138620633206493538}
+  - component: {fileID: -1891534110220951507}
   m_Layer: 7
   m_Name: SmallTree
   m_TagString: Untagged
@@ -204,6 +205,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6143627, y: 2.514183}
   m_EdgeRadius: 0
+--- !u!114 &-1891534110220951507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3508085877631553985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc98aafe1453524f853c696250c3959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialScale: 1
+  scaleFactorPerLevel: 0.1
 --- !u!1 &3842010808940906476
 GameObject:
   m_ObjectHideFlags: 0

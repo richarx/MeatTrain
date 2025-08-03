@@ -186,10 +186,10 @@ GameObject:
   - component: {fileID: 819674643451027819}
   - component: {fileID: 7188516045963000976}
   - component: {fileID: 7978105256015616177}
-  - component: {fileID: 1414792096551604850}
   - component: {fileID: 2952265122330079618}
   - component: {fileID: 3039366838179985852}
   - component: {fileID: 6281959457661953489}
+  - component: {fileID: -7978785213849991390}
   m_Layer: 7
   m_Name: Cactus
   m_TagString: Untagged
@@ -290,22 +290,6 @@ MonoBehaviour:
   ySqueeze: 1.3
   duration: 0.1
   delay: 0
---- !u!114 &1414792096551604850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5125697228507320620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3f981d785fc1714f8f4e90a0bd45306, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 4459634624023213671}
-  blinkColor: {r: 1, g: 0, b: 0, a: 1}
-  duration: 0
-  blinkCount: 0
 --- !u!50 &2952265122330079618
 Rigidbody2D:
   serializedVersion: 4
@@ -384,6 +368,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.7734151}
   m_Size: {x: 0.5, y: 1.3963709}
   m_Direction: 0
+--- !u!114 &-7978785213849991390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5125697228507320620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc98aafe1453524f853c696250c3959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialScale: 1
+  scaleFactorPerLevel: 0.1
 --- !u!1 &8477077546431924833
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1753615298694237715}
   - component: {fileID: 4124933207626997990}
   - component: {fileID: 7679085867698774142}
+  - component: {fileID: -5149232535074572854}
   m_Layer: 7
   m_Name: MeatTree
   m_TagString: Untagged
@@ -221,6 +222,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6143627, y: 3.0807095}
   m_EdgeRadius: 0
+--- !u!114 &-5149232535074572854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293858436588472238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc98aafe1453524f853c696250c3959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialScale: 1
+  scaleFactorPerLevel: 0.1
 --- !u!1 &491175216029879049
 GameObject:
   m_ObjectHideFlags: 0

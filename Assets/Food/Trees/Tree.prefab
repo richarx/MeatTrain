@@ -81,9 +81,9 @@ GameObject:
   - component: {fileID: 8476686259382137140}
   - component: {fileID: 9125820997537747296}
   - component: {fileID: 5311404563480290171}
-  - component: {fileID: 5041024056086016718}
   - component: {fileID: 1964977824316355471}
   - component: {fileID: 6996678312023183229}
+  - component: {fileID: -7665655841163127255}
   m_Layer: 7
   m_Name: Tree
   m_TagString: Untagged
@@ -200,22 +200,6 @@ MonoBehaviour:
   ySqueeze: 1.3
   duration: 0.1
   delay: 0
---- !u!114 &5041024056086016718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1454368094839182814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3f981d785fc1714f8f4e90a0bd45306, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 5045271455255888053}
-  blinkColor: {r: 1, g: 0, b: 0, a: 1}
-  duration: 0
-  blinkCount: 0
 --- !u!50 &1964977824316355471
 Rigidbody2D:
   serializedVersion: 4
@@ -288,6 +272,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6143627, y: 3.5425189}
   m_EdgeRadius: 0
+--- !u!114 &-7665655841163127255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454368094839182814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc98aafe1453524f853c696250c3959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialScale: 1
+  scaleFactorPerLevel: 0.1
 --- !u!1 &4572502652428369316
 GameObject:
   m_ObjectHideFlags: 0
