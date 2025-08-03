@@ -1,4 +1,5 @@
 using System.Collections;
+using Final_Animation;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -71,7 +72,7 @@ namespace End_Scene
             Time.timeScale = 1.0f;
             ActivateBlackScreen();
             PlaySpookySound();
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(6.5f);
             TriggerFinalAnimation();
         }
 
@@ -134,7 +135,7 @@ namespace End_Scene
 
         private void TriggerFinalAnimation()
         {
-            
+            FinalAnimation.instance.TriggerFinalAnimation();
         }
     }
 }
