@@ -141,7 +141,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1763221174, guid: 5b27bd5252ade804184d722558c462f2, type: 3}
+  m_Sprite: {fileID: -375763077, guid: 5b27bd5252ade804184d722558c462f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -162,7 +162,7 @@ Animator:
   m_GameObject: {fileID: 4916583058342512262}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 57987ea653860ed4784d99ccb6fef20c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7b4b041b1f389c34c857a4913122699b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -192,9 +192,9 @@ GameObject:
   - component: {fileID: 5280209272654114071}
   - component: {fileID: 3523985820755987228}
   - component: {fileID: 1715025735697697442}
-  - component: {fileID: -4672589414456094332}
+  - component: {fileID: 3911065440516045585}
   m_Layer: 7
-  m_Name: WhiteDude_Front
+  m_Name: RedDude_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,11 +429,11 @@ MonoBehaviour:
   OnStartDigestion:
     m_PersistentCalls:
       m_Calls: []
-  meatValue: 25
-  digestionTime: 3
+  meatValue: 2
+  digestionTime: 6
   digestionFallCoefficient: 0.2
   sortingOrderOffset: 1
---- !u!114 &-4672589414456094332
+--- !u!114 &3911065440516045585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -84,7 +84,7 @@ MonoBehaviour:
   OnStartDigestion:
     m_PersistentCalls:
       m_Calls: []
-  meatValue: 15
+  meatValue: 10
   digestionTime: 10
   digestionFallCoefficient: 0.3
   sortingOrderOffset: -3
