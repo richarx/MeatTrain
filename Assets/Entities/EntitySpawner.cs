@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using End_Scene;
 using MiniMap;
 using UnityEngine;
 
@@ -36,7 +37,11 @@ namespace Entities
         {
             mainCamera = Camera.main;
             InitializeScene();
-            while (true)
+
+            bool spawnEntities = true;
+            EndScene.OnTriggerEndScene.AddListener(() => spawnEntities = false);
+
+            while (spawnEntities)
             {
                 CheckForEntitiesToSpawn();
                 yield return null;
