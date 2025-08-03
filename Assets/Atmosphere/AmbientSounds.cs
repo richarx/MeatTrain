@@ -1,61 +1,74 @@
 using System.Collections;
-using System.Collections.Generic;
+using End_Scene;
 using UnityEngine;
 
-public class AmbientSounds : MonoBehaviour
+namespace Atmosphere
 {
-    [SerializeField] private AudioClip spookyAmbience;
-
-    [SerializeField] private AudioClip ambientSoundWhale;
-    [SerializeField] private AudioClip ambientSoundExplosion;
-
-    private AudioSource currentAmbientSound;
-
-    void Start()
+    public class AmbientSounds : MonoBehaviour
     {
-        StartCoroutine(WhaleNoiseLoop());
-        StartCoroutine(ExplosionAmbianceSound());
+        [SerializeField] private AudioClip spookyAmbience;
 
-        PlayLoopSound();
-    }
+        [SerializeField] private AudioClip ambientSoundWhale;
+        [SerializeField] private AudioClip ambientSoundExplosion;
 
-    private IEnumerator WhaleNoiseLoop()
-    {
-        while (true)
+        private AudioSource currentAmbientSound;
+        private AudioSource loopSound;
+
+        void Start()
         {
-            float randomInterval = Random.Range(30f, 120f);
-            
-            if (currentAmbientSound == null)
+            EndScene.OnTriggerEndSceneBlackScreen.AddListener(() =>
             {
-                currentAmbientSound = SFXManager.Instance.PlaySFX(ambientSoundWhale);
-                yield return new WaitWhile(() => currentAmbientSound != null && currentAmbientSound.isPlaying);
-                currentAmbientSound = null;
-            }
+                StopAllCoroutines();
+                if (currentAmbientSound != null)
+                    currentAmbientSound.Stop();
+                if (loopSound != null)
+                    loopSound.Stop();
+            });
             
-            yield return new WaitForSeconds(randomInterval);
-        }
-    }
+            StartCoroutine(WhaleNoiseLoop());
+            StartCoroutine(ExplosionAmbianceSound());
 
-    private IEnumerator ExplosionAmbianceSound()
-    {
-        while (true)
+            PlayLoopSound();
+        }
+
+        private IEnumerator WhaleNoiseLoop()
         {
-            float randomInterval = Random.Range(30f, 120f);
-
-            if (currentAmbientSound == null)
+            while (true)
             {
-                currentAmbientSound = SFXManager.Instance.PlaySFX(ambientSoundExplosion);
-                yield return new WaitWhile(() => currentAmbientSound != null && currentAmbientSound.isPlaying);
-                currentAmbientSound = null;
+                float randomInterval = Random.Range(30f, 120f);
+            
+                if (currentAmbientSound == null)
+                {
+                    currentAmbientSound = SFXManager.Instance.PlaySFX(ambientSoundWhale);
+                    yield return new WaitWhile(() => currentAmbientSound != null && currentAmbientSound.isPlaying);
+                    currentAmbientSound = null;
+                }
+            
+                yield return new WaitForSeconds(randomInterval);
             }
-
-            yield return new WaitForSeconds(randomInterval);
         }
-    }
 
-    private void PlayLoopSound()
-    {
-        SFXManager.Instance.PlaySFX(spookyAmbience, loop: true);
+        private IEnumerator ExplosionAmbianceSound()
+        {
+            while (true)
+            {
+                float randomInterval = Random.Range(30f, 120f);
+
+                if (currentAmbientSound == null)
+                {
+                    currentAmbientSound = SFXManager.Instance.PlaySFX(ambientSoundExplosion);
+                    yield return new WaitWhile(() => currentAmbientSound != null && currentAmbientSound.isPlaying);
+                    currentAmbientSound = null;
+                }
+
+                yield return new WaitForSeconds(randomInterval);
+            }
+        }
+
+        private void PlayLoopSound()
+        {
+            loopSound = SFXManager.Instance.PlaySFX(spookyAmbience, loop: true);
+        }
     }
 }   
 

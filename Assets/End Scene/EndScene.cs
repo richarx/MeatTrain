@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace End_Scene
 {
@@ -10,9 +11,11 @@ namespace End_Scene
         [SerializeField] private int levelToTriggerEndScene;
         [SerializeField] private float duration;
         [SerializeField] private Transform trainTail;
-        
+        [SerializeField] private AudioClip finalCrunch;
+        [SerializeField] private Image blackScreen;
 
         public static UnityEvent OnTriggerEndScene = new UnityEvent();
+        public static UnityEvent OnTriggerEndSceneBlackScreen = new UnityEvent();
         
         public static EndScene instance;
         
@@ -53,13 +56,14 @@ namespace End_Scene
 
         private IEnumerator EndSceneCoroutine()
         {
+            ShakeEverything();
             float timer = 0.0f;
             while (timer <= duration)
             {
                 MoveCameraTowardsTarget(timer);
+                ZoomCamera(timer);
                 MoveTrainTailTowardsTarget(timer);
                 SlowDownTime(timer);
-                ShakeEverything(timer);
                 yield return null;
                 timer += Time.deltaTime;
             }
@@ -71,9 +75,30 @@ namespace End_Scene
             TriggerFinalAnimation();
         }
 
+        private Vector3 moveCameraVelocity;
         private void MoveCameraTowardsTarget(float timer)
         {
+            if (timer <= 3.0f)
+                return;
             
+            Vector3 current = mainCamera.transform.position;
+            Vector3 target = new Vector3(2.16f, 0.83f, -10.0f);
+
+            current = Vector3.SmoothDamp(current, target, ref moveCameraVelocity, duration / 3.0f);
+            mainCamera.transform.position = current;
+        }
+
+        private float zoomVelocity;
+        private void ZoomCamera(float timer)
+        {
+            if (timer <= 3.0f)
+                return;
+            
+            float current = mainCamera.orthographicSize;
+            float target = 1.0f;
+
+            current = Mathf.SmoothDamp(current, target, ref zoomVelocity, duration / 2.0f);
+            mainCamera.orthographicSize = current;
         }
 
         private float moveTailVelocity;
@@ -86,22 +111,25 @@ namespace End_Scene
 
         private void SlowDownTime(float timer)
         {
-            
+            if (timer >= 10.0f)
+                Time.timeScale = 1.0f - Tools.Tools.NormalizeValue(timer, 0.0f, duration * 2.0f);
         }
 
-        private void ShakeEverything(float timer)
+        private void ShakeEverything()
         {
-            
+            StartCoroutine(Tools.Tools.Shake(mainCamera.transform, duration, 0.01f));
+            StartCoroutine(Tools.Tools.Shake(trainTail, duration, 0.01f));
         }
 
         private void ActivateBlackScreen()
         {
-            
+            OnTriggerEndSceneBlackScreen?.Invoke();
+            blackScreen.gameObject.SetActive(true);
         }
 
         private void PlaySpookySound()
         {
-            
+            SFXManager.Instance.PlaySFX(finalCrunch, 0.5f);
         }
 
         private void TriggerFinalAnimation()

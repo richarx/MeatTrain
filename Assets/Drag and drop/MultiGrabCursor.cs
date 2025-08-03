@@ -1,4 +1,5 @@
 using System;
+using End_Scene;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -24,6 +25,8 @@ namespace Drag_and_drop
         public int FoodGrabbedCount => foodGrabbedCount;
         public bool grabCountPositive => foodGrabbedCount > 0;
 
+        private bool isLocked;
+        
         private void Awake()
         {
             instance = this;
@@ -35,10 +38,20 @@ namespace Drag_and_drop
             UpdateGraphicsState();
 
             squeeze = GetComponent<SqueezeAndStretch>();
+            
+            EndScene.OnTriggerEndScene.AddListener(() =>
+            {
+                isGrabbing = false;
+                UpdateGraphicsState();
+                isLocked = true;
+            });
         }
 
         private void Update()
         {
+            if (isLocked)
+                return;
+            
             if (isGrabbing != Mouse.current.leftButton.isPressed)
             {
                 isGrabbing = Mouse.current.leftButton.isPressed;

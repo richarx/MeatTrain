@@ -1,6 +1,7 @@
 using System;
 using Parallax;
 using System.Collections;
+using End_Scene;
 using MiniMap;
 using Train.Eat_on_Collision;
 using UnityEngine;
@@ -34,6 +35,8 @@ namespace Locomotor
         public float TargetSpeed => targetSpeed;
         public float DistanceCrawled => distanceCrawled;
 
+        private bool allGasNoBrakes;
+        
         private void Awake()
         {
             instance = this;
@@ -44,12 +47,17 @@ namespace Locomotor
             distanceCrawled = Map.instance.WorldSize / 6.0f;
             LevelHandler.LevelHandler.OnLevelChange.AddListener(UpdateMaxSpeed);
             UpdateMaxSpeed(1);
+            
+            EndScene.OnTriggerEndScene.AddListener(() => allGasNoBrakes = true);
         }
 
         private void Update()
         {
-            if (MeatWagon.instance.isFull)
+            if (MeatWagon.instance.isFull && !allGasNoBrakes)
                 DecreaseSpeed();
+            
+            if (allGasNoBrakes)
+                AddSpeed();
             
             currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, (currentSpeed < targetSpeed ? acceleration : deceleration) * Time.deltaTime);
             targetSpeed = Mathf.MoveTowards(targetSpeed, 0.0f, targetSpeedDeceleration * Time.deltaTime);
@@ -60,7 +68,7 @@ namespace Locomotor
 
         public void AddSpeed()
         {
-            if (MeatWagon.instance.isFull)
+            if (MeatWagon.instance.isFull && !allGasNoBrakes)
                 return;
             
             OnAccelerate.Invoke();
@@ -70,6 +78,9 @@ namespace Locomotor
 
         public void DecreaseSpeed()
         {
+            if (allGasNoBrakes)
+                return;
+            
             targetSpeed -= targetSpeedDecreaseOnHold * Time.deltaTime;
             targetSpeed = Mathf.Max(targetSpeed, 0);
         }
