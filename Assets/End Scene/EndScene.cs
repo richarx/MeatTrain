@@ -9,10 +9,14 @@ namespace End_Scene
     {
         [SerializeField] private int levelToTriggerEndScene;
         [SerializeField] private float duration;
+        [SerializeField] private Transform trainTail;
+        
 
         public static UnityEvent OnTriggerEndScene = new UnityEvent();
         
         public static EndScene instance;
+        
+        private Camera mainCamera;
     
         private bool isTriggered;
         public bool IsTriggered => isTriggered;
@@ -24,6 +28,7 @@ namespace End_Scene
 
         private void Start()
         {
+            mainCamera = Camera.main;
             LevelHandler.LevelHandler.OnLevelChange.AddListener((level) =>
             {
                 if (!isTriggered && level >= levelToTriggerEndScene)
@@ -71,9 +76,12 @@ namespace End_Scene
             
         }
 
+        private float moveTailVelocity;
         private void MoveTrainTailTowardsTarget(float timer)
         {
-            
+            Vector3 current = trainTail.position;
+            current.x = Mathf.SmoothDamp(current.x, 1.5f, ref moveTailVelocity, duration / 2.0f);
+            trainTail.position = current;
         }
 
         private void SlowDownTime(float timer)

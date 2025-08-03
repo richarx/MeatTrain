@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 5283981159441373496}
   box: {fileID: 7140662890762708495}
+  fadeValue: 0.2
   animationDuration: 0.3
 --- !u!114 &-5618104569902925064
 MonoBehaviour:
