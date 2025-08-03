@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -26,6 +27,10 @@ namespace Final_Animation
         [SerializeField] private float textureSoundFadeDuration;
         [SerializeField] private float textureSoundMaxVolume;
         
+        [Space]
+        [SerializeField] private Image whiteScreen;
+        [SerializeField] private TextMeshProUGUI finalText;
+
         public static FinalAnimation instance;
 
         private void Awake()
@@ -64,7 +69,21 @@ namespace Final_Animation
 
             Vector3 position = faceTarget.position;
             position.y -= faceMoveDistance;
-            yield return Tools.Tools.TweenPosition(faceTarget, position.x, position.y, faceMoveDuration);
+            face.GetComponent<Animator>().Play("CloseMouth");
+            StartCoroutine(Tools.Tools.TweenPosition(faceTarget, position.x, position.y, faceMoveDuration));
+            yield return new WaitForSeconds(faceMoveDuration);
+
+            whiteScreen.gameObject.SetActive(true);
+            yield return Tools.Tools.Fade(whiteScreen, 4.0f, true);
+            faceTarget.gameObject.SetActive(false);
+            planet.gameObject.SetActive(false);
+            yield return Tools.Tools.Fade(whiteScreen, 1.0f, false);
+            whiteScreen.gameObject.SetActive(false);
+            
+            finalText.gameObject.SetActive(true);
+            yield return Tools.Tools.Fade(finalText, 3.0f, true);
+            
+            Time.timeScale = 0.0f;
         }
 
         private IEnumerator FadeInSound(AudioSource source)

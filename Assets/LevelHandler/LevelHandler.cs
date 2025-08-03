@@ -2,6 +2,7 @@ using Locomotor;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Dialog;
 using Train.Eat_on_Collision;
 using UI.ToolTip;
 using UnityEngine;
@@ -48,7 +49,7 @@ namespace LevelHandler
 
         private void DisplayFirstLevelPrompt()
         {
-            var tooltip = ToolTipManager.instance.DisplayToolTip("Press A and D to Move");
+            Tooltip tooltip = ToolTipManager.instance.DisplayToolTip("Press A and D to Move");
 
             int count = 0;
             bool displayFirstPopup = false;
