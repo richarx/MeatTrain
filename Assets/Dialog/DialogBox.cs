@@ -41,5 +41,12 @@ namespace Dialog
             yield return Tools.Tools.Fade(box, animationDuration, true, maxAlpha:0.2f);
             squeezeAndStretch.Trigger();
         }
+
+        public void HideAndDestroy()
+        {
+            StartCoroutine(Tools.Tools.Fade(text, animationDuration, false));
+            StartCoroutine(Tools.Tools.Fade(box, animationDuration, false, maxAlpha:0.2f));
+            Destroy(gameObject, animationDuration + 0.15f);
+        }
     }
 }

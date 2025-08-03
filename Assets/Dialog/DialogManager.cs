@@ -21,10 +21,11 @@ namespace Dialog
             instance = this;
         }
 
-        public void SpawnDialog(Vector3 position, NPCType npcType)
+        public DialogBox SpawnDialog(Vector3 position, NPCType npcType)
         {
             DialogBox box = Instantiate(dialogBoxPrefab, position, Quaternion.identity);
             box.Setup(ComputeText(npcType));
+            return box;
         }
 
         private string ComputeText(NPCType npcType)
