@@ -69,18 +69,12 @@ namespace MiniMap
 
         private void IncreaseTrainSize(int level)
         {
-            length += 1;
+            length += 2;
             angleBetweenNodes = startingAngleBetweenNodes + (angleBetweenNodesScaling * level);
         }
 
         private void Update()
         {
-            if (Keyboard.current.leftArrowKey.wasPressedThisFrame)
-                length = Mathf.Max(1, length - 1);
-            
-            if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
-                length = Mathf.Min(100, length + 1);
-
             UpdateTrainPosition();
             UpdateTrainLength();
             UpdateNodesPosition();

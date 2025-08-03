@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 3523985820755987228}
   - component: {fileID: 1715025735697697442}
   - component: {fileID: -4672589414456094332}
+  - component: {fileID: -299729943730781104}
   m_Layer: 7
   m_Name: WhiteDude_Front
   m_TagString: Untagged
@@ -455,3 +456,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialScale: 1
   scaleFactorPerLevel: 0.1
+--- !u!114 &-299729943730781104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5944325690374857956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2076d0f7f88a56d4abfb0f39864d4686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chancesToSpeak: 0.25
+  spawnDialogOffset: {x: 0, y: 1.5}
+  npc: 0

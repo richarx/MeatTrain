@@ -51,7 +51,7 @@ namespace LevelHandler
         {
             if (MeatWagon.instance.isFull && Keyboard.current.lKey.wasPressedThisFrame)
             {
-                ToolTipManager.instance.DisplayToolTip(ComputeLevelUpText(), 1.0f);
+                ToolTipManager.instance.DisplayToolTip(ComputeLevelUpText(), 2.0f);
                 ChangeLevel();
             }
         }
@@ -69,12 +69,11 @@ namespace LevelHandler
         {
             string[] array = new[]
             {
-                "more...",
-                "need more...",
-                "more meat...",
-                "where meat ?..",
-                "So hungry...",
-                "not enough...",
+                "More Meat",
+                "Let all be Meat",
+                "Where meat ?",
+                "I eat therefore I AM",
+                "Close the loop",
             };
 
             if (currentLevel > array.Length)

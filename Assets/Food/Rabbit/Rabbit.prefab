@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 5588512489444428090}
   - component: {fileID: 319337964610162025}
   - component: {fileID: 5863309221219682927}
+  - component: {fileID: -225629832443987512}
   m_Layer: 7
   m_Name: Rabbit
   m_TagString: Untagged
@@ -59,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropSpeed: 6
   dropHeight: 1.5
+  cantGrabBeforeLevel: 0
   hitbox: {fileID: 1862179611257984402}
   dragSounds:
   - {fileID: 8300000, guid: a6a9511ddc140934fa162011b2da9786, type: 3}
@@ -293,6 +295,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialScale: 1
   scaleFactorPerLevel: 0.1
+--- !u!114 &-225629832443987512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369881519299306492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2076d0f7f88a56d4abfb0f39864d4686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chancesToSpeak: 0.3
+  spawnDialogOffset: {x: 0, y: 1.5}
+  npc: 2
 --- !u!1 &1455800566474099580
 GameObject:
   m_ObjectHideFlags: 0

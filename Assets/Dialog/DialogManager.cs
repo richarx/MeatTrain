@@ -7,7 +7,8 @@ namespace Dialog
     public enum NPCType
     {
         BlackDude,
-        Fanatic
+        Fanatic,
+        Rabbit
     }
     
     public class DialogManager : MonoBehaviour
@@ -45,6 +46,8 @@ namespace Dialog
                     return blackDude;
                 case NPCType.Fanatic:
                     return fanatic;
+                case NPCType.Rabbit:
+                    return rabbit;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(npcType), npcType, null);
             }   
@@ -52,22 +55,30 @@ namespace Dialog
 
         string[] blackDude = new[]
         {
-            "more...",
-            "need more...",
-            "more meat...",
-            "where meat ?..",
-            "So hungry...",
-            "not enough...",
+            "What is this thing ..?",
+            "AAAAAHHH",
+            "Oh NO!",
+            "RUN",
+            "Is this a metaphor for capitalism ?"
         };
         
         string[] fanatic = new[]
         {
-            "more...",
-            "need more...",
-            "more meat...",
-            "where meat ?..",
-            "So hungry...",
-            "not enough...",
+            "REJOICE",
+            "Vora'Ul look at me!",
+            "ME ME ME",
+            "Let me be meat",
+            "Let all be meat",
+            "Consume me !",
+            "Choose me O Great One",
+            "CHOO CHOO",
+            "MASTER",
+            "Is this a metaphor for capitalism ?"
+        };
+
+        string[] rabbit = new[]
+        {
+            "mee ?",
         };
     }
 }

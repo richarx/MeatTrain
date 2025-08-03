@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2076d0f7f88a56d4abfb0f39864d4686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chancesToSpeak: 0.3
+  chancesToSpeak: 0.25
   spawnDialogOffset: {x: 0, y: 1.5}
   npc: 0
 --- !u!114 &-8747434603377965279
