@@ -243,6 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropSpeed: 6
   dropHeight: 1.5
+  cantGrabBeforeLevel: 0
   hitbox: {fileID: 520680611666511487}
   dragSounds:
   - {fileID: 8300000, guid: 7bacd93e1e8326c4b87190d6b0d57ffc, type: 3}
@@ -365,18 +366,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloodParticles:
-  - {fileID: 4682335699828752895, guid: 59a7cebbb035a3340b2e79a3e78098ea, type: 3}
-  - {fileID: 87095716638821451, guid: 23d2df6e0cc2d974091c223a7a1ac988, type: 3}
-  - {fileID: 8130165704439340640, guid: 9aabd2f3d4e70c0419c47fa414cf236e, type: 3}
-  - {fileID: 7492719039021353942, guid: 35593fa994c0177419f14e81a21e1ed7, type: 3}
-  - {fileID: 5343398588388544243, guid: 35e35c40e39657748b4d273b4fd9a6f3, type: 3}
+  - {fileID: 4682335699828752895, guid: e41560214ea508e419ae5502cf97cf9a, type: 3}
+  - {fileID: 87095716638821451, guid: ad37eed4d28ab774291cdfab19692388, type: 3}
+  - {fileID: 8130165704439340640, guid: 334b56b0bd61baf4687e63c852e95a5c, type: 3}
+  - {fileID: 7492719039021353942, guid: 666e795e8f42e6b4abe464de19b1eccd, type: 3}
+  - {fileID: 5343398588388544243, guid: 5e18119fa6bd6584f8384083d2165155, type: 3}
   bloodParticleSpawnPositionOffset: {x: 0, y: 0.2}
   greenMucusParticles:
-  - {fileID: 7173474509315729231, guid: 0742ea66f767fb64885cca23dbc58c87, type: 3}
-  - {fileID: 247202278176408517, guid: 2af08023e1d66c74cb830e64302f619c, type: 3}
-  - {fileID: 2815922470689716145, guid: 9ada41887bc3a7743a3c0cf747e5da3b, type: 3}
-  - {fileID: 9007263838461233187, guid: ffd19d0eef0a7ef429340d9f0938f649, type: 3}
-  - {fileID: 8081877286867634132, guid: e118683233431094d934e350c2525fd4, type: 3}
+  - {fileID: 7173474509315729231, guid: cad8dc8abd1597f49a1dd77a35db3850, type: 3}
+  - {fileID: 247202278176408517, guid: ada51dd28bc11a241830b8348b2369e1, type: 3}
+  - {fileID: 2815922470689716145, guid: e27bb75d098ac6b44bf1b987601dc61f, type: 3}
+  - {fileID: 9007263838461233187, guid: 6fb40e3f4a00ebe4f9b9e9c361682554, type: 3}
+  - {fileID: 8081877286867634132, guid: 41c14983bc6ae3b42aec206999f7cb87, type: 3}
   greenMucusSpawnPositionOffset: {x: 0, y: 0}
   topSplatterParticles:
   - {fileID: 2267424410220414725, guid: 671608fcce5581d40989a2474b8f429e, type: 3}
