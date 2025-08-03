@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -27,13 +28,18 @@ namespace VFX.Meat_Score
             text.text = $"{Mathf.FloorToInt(score)}";
             isSetup = true;
 
-            AnimateAndDestroy();
+            StartCoroutine(AnimateAndDestroy());
         }
 
-        private void AnimateAndDestroy()
+        private IEnumerator AnimateAndDestroy()
         {
             Vector3 target = transform.position + Vector3.down * animationDistance;
+            
+            StartCoroutine(Tools.Tools.Fade(text, 0.1f, true));
+            StartCoroutine(Tools.Tools.Fade(plus, 0.1f, true));
+            yield return Tools.Tools.Fade(icon, 0.1f, true);
             squeezeAndStretch.Trigger();
+            
             StartCoroutine(Tools.Tools.TweenPosition(transform, target.x, target.y, animationDuration));
             StartCoroutine(Tools.Tools.Fade(text, animationDuration, false));
             StartCoroutine(Tools.Tools.Fade(plus, animationDuration, false));

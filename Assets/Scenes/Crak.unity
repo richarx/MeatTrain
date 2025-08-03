@@ -565,10 +565,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 984858701574614870, guid: 827a4dd6cf225c44e9905c463c085d54, type: 3}
-      propertyPath: meatScorePrefab
-      value: 
-      objectReference: {fileID: 6952785759981988908, guid: d20d176238e07344f8d14d704c1ea67e, type: 3}
     - target: {fileID: 5034196851178404340, guid: 827a4dd6cf225c44e9905c463c085d54, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.33

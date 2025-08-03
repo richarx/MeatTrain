@@ -401,7 +401,7 @@ MonoBehaviour:
   - {fileID: -510027136, guid: 7a11bec8844544f45bd9c9162ce6c527, type: 3}
   - {fileID: 2001840405, guid: 7a11bec8844544f45bd9c9162ce6c527, type: 3}
   - {fileID: -132358396, guid: 7a11bec8844544f45bd9c9162ce6c527, type: 3}
-  meatScorePrefab: {fileID: 7789275213115889009, guid: d20d176238e07344f8d14d704c1ea67e, type: 3}
+  meatScorePrefab: {fileID: 6952785759981988908, guid: d20d176238e07344f8d14d704c1ea67e, type: 3}
   meatScorePivot: {fileID: 1944732968950163666}
   eating:
   - {fileID: 8300000, guid: 356c5b162cc7c6d48bd83456f4bdb635, type: 3}
