@@ -10,6 +10,8 @@ namespace Drag_and_drop
     {
         [SerializeField] private float dropSpeed;
         [SerializeField] private float dropHeight;
+        [SerializeField] private float cantGrabBeforeLevel;
+
         [SerializeField] private Collider2D hitbox;
         [SerializeField] private List<AudioClip> dragSounds;
 
@@ -71,6 +73,9 @@ namespace Drag_and_drop
         private void Drag()
         {
             if (digestable.isBeingDigested)
+                return;
+
+            if (LevelHandler.LevelHandler.Instance.CurrentLevel < cantGrabBeforeLevel)
                 return;
 
             OnDrag.Invoke();
