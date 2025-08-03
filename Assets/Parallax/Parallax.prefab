@@ -136,6 +136,7 @@ MonoBehaviour:
   direction: {x: -1, y: 0}
   biome: 2
   isScaling: 0
+  endGameSprite: {fileID: 21300000, guid: 0801174857f32e9419dc7fd2d002061a, type: 3}
   OnReachExit:
     m_PersistentCalls:
       m_Calls: []
@@ -1131,6 +1132,7 @@ MonoBehaviour:
   direction: {x: -1, y: 0}
   biome: 1
   isScaling: 1
+  endGameSprite: {fileID: 386631424, guid: ac1dee4a7d5803747bde7f46d003064e, type: 3}
   OnReachExit:
     m_PersistentCalls:
       m_Calls: []
@@ -1304,6 +1306,7 @@ MonoBehaviour:
   direction: {x: -1, y: 0}
   biome: 3
   isScaling: 1
+  endGameSprite: {fileID: 0}
   OnReachExit:
     m_PersistentCalls:
       m_Calls: []
@@ -1359,6 +1362,7 @@ MonoBehaviour:
   direction: {x: -1, y: 0}
   biome: 0
   isScaling: 1
+  endGameSprite: {fileID: -2115081593, guid: 9efc451992d001542ba3ca75414e2ca2, type: 3}
   OnReachExit:
     m_PersistentCalls:
       m_Calls: []
@@ -1498,6 +1502,7 @@ MonoBehaviour:
   direction: {x: -1, y: 0}
   biome: 3
   isScaling: 1
+  endGameSprite: {fileID: 0}
   OnReachExit:
     m_PersistentCalls:
       m_Calls: []
@@ -1553,6 +1558,7 @@ MonoBehaviour:
   direction: {x: -1, y: 0}
   biome: 1
   isScaling: 0
+  endGameSprite: {fileID: 21300000, guid: 320286c25bfff514faa6769156d7eb6b, type: 3}
   OnReachExit:
     m_PersistentCalls:
       m_Calls: []
@@ -1692,6 +1698,7 @@ MonoBehaviour:
   direction: {x: -1, y: 0}
   biome: 2
   isScaling: 1
+  endGameSprite: {fileID: -1340425534, guid: 3db6b2798a583c4448eefa239da65565, type: 3}
   OnReachExit:
     m_PersistentCalls:
       m_Calls: []
@@ -1999,6 +2006,7 @@ MonoBehaviour:
   direction: {x: -1, y: 0}
   biome: 1
   isScaling: 1
+  endGameSprite: {fileID: -622371299, guid: ac1dee4a7d5803747bde7f46d003064e, type: 3}
   OnReachExit:
     m_PersistentCalls:
       m_Calls: []
@@ -2255,6 +2263,7 @@ MonoBehaviour:
   direction: {x: -1, y: 0}
   biome: 0
   isScaling: 0
+  endGameSprite: {fileID: 21300000, guid: 786305dfb87a89a409982ca595ce1945, type: 3}
   OnReachExit:
     m_PersistentCalls:
       m_Calls: []
@@ -2394,6 +2403,7 @@ MonoBehaviour:
   direction: {x: -1, y: 0}
   biome: 0
   isScaling: 1
+  endGameSprite: {fileID: 482447080, guid: 9efc451992d001542ba3ca75414e2ca2, type: 3}
   OnReachExit:
     m_PersistentCalls:
       m_Calls: []
@@ -2449,6 +2459,7 @@ MonoBehaviour:
   direction: {x: -1, y: 0}
   biome: 2
   isScaling: 1
+  endGameSprite: {fileID: -1929308319, guid: 3db6b2798a583c4448eefa239da65565, type: 3}
   OnReachExit:
     m_PersistentCalls:
       m_Calls: []
@@ -2913,6 +2924,7 @@ MonoBehaviour:
   direction: {x: -1, y: 0}
   biome: 3
   isScaling: 1
+  endGameSprite: {fileID: 0}
   OnReachExit:
     m_PersistentCalls:
       m_Calls: []

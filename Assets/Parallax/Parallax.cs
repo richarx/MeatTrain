@@ -14,6 +14,7 @@ namespace Parallax
         [SerializeField] private Vector2 direction;
         [SerializeField] private Map.Biome biome;
         [SerializeField] private bool isScaling;
+        [SerializeField] private Sprite endGameSprite;
 
         [HideInInspector] public UnityEvent OnReachExit = new UnityEvent();
 
@@ -94,7 +95,7 @@ namespace Parallax
 
             if (isStopRequested)
                 parallax.gameObject.SetActive(false);
-            
+
             OnReachExit?.Invoke();
         }
 
@@ -122,6 +123,12 @@ namespace Parallax
             {
                 parallax1.position = secondPosition;
                 parallax2.position = thirdPosition;
+
+                if (LevelHandler.LevelHandler.Instance.CurrentLevel >= 5 && endGameSprite != null)
+                {
+                    parallax1.GetComponent<SpriteRenderer>().sprite = endGameSprite;
+                    parallax2.GetComponent<SpriteRenderer>().sprite = endGameSprite;
+                }
             }
         }
     }
