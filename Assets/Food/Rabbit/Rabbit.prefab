@@ -60,6 +60,8 @@ MonoBehaviour:
   dropSpeed: 6
   dropHeight: 1.5
   hitbox: {fileID: 1862179611257984402}
+  dragSounds:
+  - {fileID: 8300000, guid: a6a9511ddc140934fa162011b2da9786, type: 3}
   OnDrag:
     m_PersistentCalls:
       m_Calls: []

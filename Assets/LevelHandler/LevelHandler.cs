@@ -23,6 +23,8 @@ namespace LevelHandler
 
         [SerializeField] private Transform cameraTransform;
         [SerializeField] private List<AudioClip> levelUpSounds;
+        [SerializeField] private AudioClip evolvingSound;
+
 
         [SerializeField] private Image bloodOverlay;
 
@@ -82,6 +84,7 @@ namespace LevelHandler
         private void PlayLevelUpSound()
         {
             SFXManager.Instance.PlayRandomSFX(levelUpSounds);
+            SFXManager.Instance.PlaySFX(evolvingSound);
         }
 
         private void ScreenShake()

@@ -29,7 +29,7 @@ namespace Entities
             rb = GetComponent<Rigidbody2D>();
             draggable = GetComponent<Draggable>();
 
-            meatValue += Random.Range(-2, 2);
+            meatValue += Random.Range(0, 2);
         }
 
         private void Update()

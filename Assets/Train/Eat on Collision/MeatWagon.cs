@@ -20,6 +20,7 @@ namespace Train.Eat_on_Collision
         [SerializeField] public Transform meatScorePivot;
 
         [SerializeField] private List<AudioClip> eating;
+        [SerializeField] private List<AudioClip> digest;
 
         public static MeatWagon instance;
         
@@ -68,6 +69,7 @@ namespace Train.Eat_on_Collision
             Debug.Log(MeatCount);
             
             SpawnMeatScore(food.MeatValue);
+            PlayDigestSound();
 
             OnEat.Invoke(MeatCount);
 
@@ -76,6 +78,11 @@ namespace Train.Eat_on_Collision
                 MeatCount = MeatMax;
                 OnMeatWagonFull.Invoke();
             }
+        }
+
+        private void PlayDigestSound()
+        {
+            SFXManager.Instance.PlayRandomSFX(digest);
         }
 
         private void UpdateFoodLevel(int level)

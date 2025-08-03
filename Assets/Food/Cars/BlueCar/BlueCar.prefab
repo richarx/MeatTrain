@@ -230,6 +230,8 @@ MonoBehaviour:
   dropSpeed: 6
   dropHeight: 1.5
   hitbox: {fileID: 6931200840845249599}
+  dragSounds:
+  - {fileID: 8300000, guid: bd3187d0a9b6ed8458540a89f31148c0, type: 3}
   OnDrag:
     m_PersistentCalls:
       m_Calls: []
@@ -374,7 +376,7 @@ MonoBehaviour:
   meatValue: 10
   digestionTime: 10
   digestionFallCoefficient: 0.1
-  sortingOrderOffset: 0
+  sortingOrderOffset: -4
 --- !u!114 &4206261072766663632
 MonoBehaviour:
   m_ObjectHideFlags: 0

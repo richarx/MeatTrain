@@ -16,7 +16,7 @@ public class SFXManager : MonoBehaviour
 
     public AudioSource PlayRandomSFX(List<AudioClip> clips, float volume = 0.1f, float delay = 0.0f, bool loop = false, float pitch = 1f)
     {
-        if (clips == null)
+        if (clips == null || clips.Count == 0)
             return null;
 
         int index = Random.Range(0, clips.Count);
