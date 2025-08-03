@@ -156,6 +156,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9f71fd6c7fe754e43a18ba460a779215, type: 3}
   - {fileID: 8300000, guid: aa3dd2b69277bc44982bbc696cdc7179, type: 3}
   - {fileID: 8300000, guid: b43dc8b16d5c05443a7cf9b7a99ed751, type: 3}
+  evolvingSound: {fileID: 8300000, guid: fcf365af95895994dba9965d505d139f, type: 3}
   bloodOverlay: {fileID: 1667916517}
 --- !u!4 &123327480
 Transform:
