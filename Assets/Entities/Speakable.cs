@@ -1,4 +1,3 @@
-using System;
 using Dialog;
 using Drag_and_drop;
 using Tools;
@@ -43,6 +42,7 @@ namespace Entities
 
         private void HideDialog()
         {
+            shouldSpeak = false;
             if (dialogBox != null)
             {
                 dialogBox.HideAndDestroy();
