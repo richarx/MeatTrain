@@ -1755,6 +1755,8 @@ MonoBehaviour:
   - {fileID: 8611116174487498613}
   - {fileID: 2723739984033815820}
   maxIntensity: 0.025
+  crawlingSound: {fileID: 8300000, guid: 8a8ca78a5368ee44a94cb390c4b9af5a, type: 3}
+  finalCrawlingSound: {fileID: 8300000, guid: 0ee7459f9f715cb4992911073066ce37, type: 3}
 --- !u!70 &3813519962506033322
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
