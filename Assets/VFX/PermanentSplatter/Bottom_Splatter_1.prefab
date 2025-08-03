@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7574366141291557407}
   - component: {fileID: 4372482765480099508}
   - component: {fileID: -4173744135299363600}
+  - component: {fileID: -2910694849007631332}
   m_Layer: 0
   m_Name: Bottom_Splatter_1
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 1496718268, guid: 485b13ec6dfd5e745a01caf8e8fb19b7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -97,3 +98,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e72d399098c63a4c8c859217da491ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2910694849007631332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831554333606372812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dafb5ef88e6ebe4eac10824d118c349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTransform: {fileID: 7574366141291557407}
+  xSqueeze: 0.3
+  ySqueeze: 0.3
+  duration: 0.1
+  delay: 0
