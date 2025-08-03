@@ -1,5 +1,7 @@
 using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace Drag_and_drop
@@ -8,10 +10,13 @@ namespace Drag_and_drop
     {
         public static MultiGrabCursor instance;
 
+        [SerializeField] private TextMeshPro grabCounterTMP;
+
         [SerializeField] private GameObject cursorCollider;
 
         private Camera mainCamera;
-        
+        private SqueezeAndStretch squeeze;
+
         private bool isGrabbing;
         public bool IsGrabbing => isGrabbing;
 
@@ -27,6 +32,8 @@ namespace Drag_and_drop
         {
             mainCamera = Camera.main;
             UpdateGraphicsState();
+
+            squeeze = GetComponent<SqueezeAndStretch>();
         }
 
         private void Update()
@@ -58,11 +65,19 @@ namespace Drag_and_drop
         public void AddFoodCount()
         {
             foodGrabbedCount += 1;
+            UpdateCount(foodGrabbedCount);
+            squeeze.Trigger();
         }
 
         public void RemoveFoodCount()
         {
             foodGrabbedCount -= 1;
+            grabCounterTMP.text = "";
+        }
+
+        private void UpdateCount(int foodCount)
+        {
+            grabCounterTMP.text = $"{foodCount}";
         }
     }
 }
