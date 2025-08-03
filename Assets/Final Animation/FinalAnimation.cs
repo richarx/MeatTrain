@@ -38,15 +38,6 @@ namespace Final_Animation
             instance = this;
         }
 
-        public void Update()
-        {
-            if (Keyboard.current.lKey.wasPressedThisFrame)
-            {
-                blackScreen.SetActive(true);
-                TriggerFinalAnimation();
-            }
-        }
-
         public void TriggerFinalAnimation()
         {
             StartCoroutine(FinalAnimationCoroutine());
@@ -54,6 +45,8 @@ namespace Final_Animation
 
         private IEnumerator FinalAnimationCoroutine()
         {
+            blackScreen.SetActive(true);
+            
             AudioSource source = SFXManager.Instance.PlaySFX(textureSound, volume:0.0f);
             yield return FadeInSound(source);
             

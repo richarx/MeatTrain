@@ -50,6 +50,8 @@ namespace End_Scene
         {
             if (isTriggered)
                 return;
+
+            isTriggered = true;
             
             OnTriggerEndScene?.Invoke();
             StartCoroutine(EndSceneCoroutine());

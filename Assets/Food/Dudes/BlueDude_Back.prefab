@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 533569143649721427}
   - component: {fileID: 3996871596558490214}
   - component: {fileID: 3505587672810616709}
-  - component: {fileID: 995639485292897694}
   - component: {fileID: 2266468633531379037}
   - component: {fileID: 7382732846994175405}
   - component: {fileID: 1449621476223692635}
@@ -192,22 +191,6 @@ MonoBehaviour:
   ySqueeze: 1.3
   duration: 0.1
   delay: 0
---- !u!114 &995639485292897694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2318159408652714967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3f981d785fc1714f8f4e90a0bd45306, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 8842993876558284183}
-  blinkColor: {r: 1, g: 0, b: 0, a: 1}
-  duration: 0
-  blinkCount: 0
 --- !u!50 &2266468633531379037
 Rigidbody2D:
   serializedVersion: 4
