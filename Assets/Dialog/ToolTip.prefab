@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: More meat
+  m_text: REJOICE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f3d8a8cb9491fb4ebbde8da524c3bd5, type: 2}
   m_sharedMaterial: {fileID: -1148999171636027822, guid: 0ec4469c3859e4e48aaf46561f7788d3, type: 2}
