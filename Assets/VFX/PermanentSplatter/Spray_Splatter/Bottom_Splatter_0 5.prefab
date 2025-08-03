@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -5896027136583151140}
   - component: {fileID: 7556341184444047780}
   m_Layer: 0
-  m_Name: Bottom_Splatter_0
+  m_Name: Bottom_Splatter_0 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
-  m_Sprite: {fileID: -1584764940, guid: 485b13ec6dfd5e745a01caf8e8fb19b7, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -1533821212, guid: 834524bfc81c18145aa2f910a60856d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 5062031257547002846}
-  xSqueeze: 0.3
-  ySqueeze: 0.3
+  xSqueeze: 0.7
+  ySqueeze: 0.7
   duration: 0.1
   delay: 0

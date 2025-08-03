@@ -122,6 +122,9 @@ MonoBehaviour:
   bottomSplatterParticles:
   - {fileID: 8317907703647368443, guid: b64a5281bfe7f3e46a4eb8b9d4c9840c, type: 3}
   - {fileID: 1831554333606372812, guid: d8a525fb219de0c46b4a927fb302781c, type: 3}
+  - {fileID: 8317907703647368443, guid: eba1a493c0e93b14c9aa5882d68baf9a, type: 3}
+  - {fileID: 8317907703647368443, guid: 37b8b75fd99decc4baac7ee4531c13aa, type: 3}
+  - {fileID: 8317907703647368443, guid: 92f3780a67c55494da56f8ca093ad0e8, type: 3}
 --- !u!114 &834196755186290963
 MonoBehaviour:
   m_ObjectHideFlags: 0

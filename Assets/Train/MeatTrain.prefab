@@ -2023,6 +2023,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   honk: {fileID: 8300000, guid: 249aaf20f5eec294eb87994ecd265284, type: 3}
   bloodGeyserParticle: {fileID: 8379298251714157104}
+  permanentBloodSplatters:
+  - {fileID: 1831554333606372812, guid: d8a525fb219de0c46b4a927fb302781c, type: 3}
+  - {fileID: 8317907703647368443, guid: b64a5281bfe7f3e46a4eb8b9d4c9840c, type: 3}
   animationDuration: 2.7
 --- !u!1 &7367055539599412551
 GameObject:
