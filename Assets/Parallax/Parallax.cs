@@ -36,9 +36,6 @@ namespace Parallax
             firstPosition = parallax1.position;
             initialDistance = Vector3.Distance(parallax1.position, parallax2.position);
             ComputePositions(initialDistance);
-
-            if (currentBiome == Map.Biome.Forest)
-                Debug.Log($"first : {firstPosition} / second : {secondPosition} / third : {thirdPosition}");
             
             LevelHandler.LevelHandler.OnLevelChange.AddListener((level) => StartCoroutine(UpdateScale(level)));
         }

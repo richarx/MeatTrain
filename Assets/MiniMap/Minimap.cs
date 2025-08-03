@@ -11,6 +11,7 @@ namespace MiniMap
         [SerializeField] private Transform display;
         [SerializeField] private Transform parentHolder;
         [SerializeField] private GameObject nodePrefab;
+        [SerializeField] private SpriteRenderer planetOverlay;
         [SerializeField] private int levelRequiredToUnlock;
         [SerializeField] private float distanceFromPlanetCenter;
         [SerializeField] private float startingAngleBetweenNodes;
@@ -34,10 +35,19 @@ namespace MiniMap
                 if (!isUnlocked && level >= levelRequiredToUnlock)
                     StartCoroutine(Unlock());
                 
+                if (isUnlocked)
+                    UpdatePlanetOverlay(level);
+                
                 IncreaseTrainSize(level);
             });
 
             SetupInitialNodes();
+        }
+
+        private void UpdatePlanetOverlay(int level)
+        {
+            float fade = -0.3f + 0.1f * level;
+            StartCoroutine(Tools.Tools.Fade(planetOverlay, 0.3f, true, minAlpha:planetOverlay.color.a, maxAlpha:fade));
         }
 
         private IEnumerator Unlock()

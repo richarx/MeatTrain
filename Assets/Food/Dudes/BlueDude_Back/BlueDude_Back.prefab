@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 2266468633531379037}
   - component: {fileID: 7382732846994175405}
   - component: {fileID: 1449621476223692635}
+  - component: {fileID: 8404714565562467152}
   m_Layer: 7
   m_Name: BlueDude_Back
   m_TagString: Untagged
@@ -122,6 +123,9 @@ MonoBehaviour:
   bottomSplatterParticles:
   - {fileID: 8317907703647368443, guid: b64a5281bfe7f3e46a4eb8b9d4c9840c, type: 3}
   - {fileID: 1831554333606372812, guid: d8a525fb219de0c46b4a927fb302781c, type: 3}
+  - {fileID: 8317907703647368443, guid: eba1a493c0e93b14c9aa5882d68baf9a, type: 3}
+  - {fileID: 8317907703647368443, guid: 37b8b75fd99decc4baac7ee4531c13aa, type: 3}
+  - {fileID: 8317907703647368443, guid: 92f3780a67c55494da56f8ca093ad0e8, type: 3}
 --- !u!114 &834196755186290963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +277,21 @@ MonoBehaviour:
   shadowInteractMask:
     serializedVersion: 2
     m_Bits: 832
+--- !u!114 &8404714565562467152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2318159408652714967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2076d0f7f88a56d4abfb0f39864d4686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chancesToSpeak: 0.3
+  spawnDialogOffset: {x: 0, y: 1.5}
+  npc: 0
 --- !u!1 &4004399001243297947
 GameObject:
   m_ObjectHideFlags: 0
