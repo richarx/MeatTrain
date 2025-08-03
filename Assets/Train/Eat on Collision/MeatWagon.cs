@@ -84,14 +84,16 @@ namespace Train.Eat_on_Collision
 
             if (level == 1)
                 MeatMax = 100;
-            if (level == 2)
+            else if (level == 2)
+                MeatMax = 120;
+            else if (level == 3)
+                MeatMax = 150;
+            else if (level == 4)
+                MeatMax = 200;
+            else if (level == 5)
                 MeatMax = 250;
-            if (level == 3)
-                MeatMax = 450;
-            if (level == 4)
-                MeatMax = 700;
-            if (level == 5)
-                MeatMax = 1000;
+            else
+                MeatMax = 300;
             
             UpdateVisualLevel();
         }

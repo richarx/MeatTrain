@@ -72,9 +72,9 @@ namespace Tools
             return DegreeToVector2(newAngle).normalized;
         }
 
-        public static IEnumerator Fade(SpriteRenderer sprite, float duration, bool fadeIn, float maxAlpha = 1.0f, bool scaledTime = true)
+        public static IEnumerator Fade(SpriteRenderer sprite, float duration, bool fadeIn, float minAlpha = 0.0f, float maxAlpha = 1.0f, bool scaledTime = true)
         {
-            float fade = fadeIn ? 0.0f : maxAlpha;
+            float fade = fadeIn ? minAlpha : maxAlpha;
             float timer = duration;
             float increment = maxAlpha / timer;
             Color color = sprite.color;
@@ -92,7 +92,7 @@ namespace Tools
                 yield return null;
             }
 
-            color.a = fadeIn ? maxAlpha : 0.0f;
+            color.a = fadeIn ? maxAlpha : minAlpha;
             sprite.color = color;
         }
 
