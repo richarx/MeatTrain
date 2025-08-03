@@ -1,12 +1,12 @@
-using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Parallax
 {
     public class SkyColorTransition : MonoBehaviour
     {
-        [SerializeField] private SpriteRenderer sky;
+        [SerializeField] private List<SpriteRenderer> spriteRenderers;
         [SerializeField] private Gradient gradient;
 
         private void Start()
@@ -32,9 +32,17 @@ namespace Parallax
                 newColor.r = Tools.Tools.NormalizeValueInRange(timer, 0.0f, 1.5f, current.r, target.r);
                 newColor.g = Tools.Tools.NormalizeValueInRange(timer, 0.0f, 1.5f, current.g, target.g);
                 newColor.b = Tools.Tools.NormalizeValueInRange(timer, 0.0f, 1.5f, current.b, target.b);
-                sky.color = newColor;
+                UpdateAllColors(newColor);
                 yield return null;
                 timer += Time.deltaTime;
+            }
+        }
+
+        private void UpdateAllColors(Color newColor)
+        {
+            foreach (SpriteRenderer sr in spriteRenderers)
+            {
+                sr.color = newColor;
             }
         }
     }
