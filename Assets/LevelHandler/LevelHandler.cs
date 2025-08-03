@@ -1,9 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
 using Train.Eat_on_Collision;
 using UI.ToolTip;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace LevelHandler
 {
@@ -22,10 +24,14 @@ namespace LevelHandler
         [SerializeField] private Transform cameraTransform;
         [SerializeField] private List<AudioClip> levelUpSounds;
 
+        [SerializeField] private Image bloodOverlay;
+
         private void Start()
         {
             Instance = this;
             MeatWagon.OnMeatWagonFull.AddListener(DisplayToolTip);
+
+            bloodOverlay.gameObject.SetActive(false);
         }
 
         private void DisplayToolTip()
@@ -48,6 +54,7 @@ namespace LevelHandler
             OnLevelChange.Invoke(currentLevel);
             PlayLevelUpSound();
             ScreenShake();
+            StartCoroutine(DisplayOverlay());
         }
 
         private string ComputeLevelUpText()
@@ -76,6 +83,16 @@ namespace LevelHandler
         private void ScreenShake()
         {
             StartCoroutine(Tools.Tools.Shake(cameraTransform, 0.2f, 0.3f, true));
+        }
+
+        private IEnumerator DisplayOverlay()
+        {
+            bloodOverlay.gameObject.SetActive(true);
+
+            yield return Tools.Tools.Fade(bloodOverlay, 0.3f, true, 0, 0.3f);
+            yield return Tools.Tools.Fade(bloodOverlay, 0.3f, false, 0, 0.3f);
+
+            bloodOverlay.gameObject.SetActive(false);
         }
     }
 }
