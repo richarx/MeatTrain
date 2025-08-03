@@ -42,7 +42,7 @@ namespace LevelHandler
 
         private void DisplayToolTip()
         {
-            ToolTipManager.instance.DisplayToolTip("Press L to $Evolve$");
+            ToolTipManager.instance.DisplayToolTip($"Press L to $Evolve$\n[{currentLevel}/6]");
         }
 
         private void Update()
